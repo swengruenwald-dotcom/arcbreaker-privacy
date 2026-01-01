@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>ArcBreaker: Ringfall Arena – Privacy Policy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="container">
+    <h1 class="title">ARC BREAKER</h1>
+    <h2 class="subtitle">Ringfall Arena – Privacy Policy</h2>
+
+    <!-- Language Switch -->
+    <div class="lang-switch">
+      <button onclick="setLang('en')">EN</button>
+      <button onclick="setLang('de')">DE</button>
+      <button onclick="setLang('es')">ES</button>
+      <button onclick="setLang('fr')">FR</button>
+    </div>
+
+    <!-- EN -->
+    <div class="lang en">
+      <h3>Privacy Policy</h3>
+      <p>
+        ArcBreaker: Ringfall Arena is a free-to-play mobile game.
+        We do not directly collect or store personal data.
+      </p>
+
+      <h4>Advertising</h4>
+      <p>
+        The app uses Google AdMob to display ads. Google may process device
+        information, advertising identifiers, IP address, and approximate
+        location.
+      </p>
+
+      <h4>User Consent (GDPR / UMP)</h4>
+      <p>
+        In applicable regions, consent is requested using Google’s User
+        Messaging Platform (UMP). Users may change their consent at any time
+        via the app settings.
+      </p>
+
+      <h4>App Tracking Transparency (ATT)</h4>
+      <p>
+        On iOS, tracking for personalized ads is enabled only if the user
+        explicitly allows it via Apple’s ATT prompt.
+      </p>
+
+      <h4>Children</h4>
+      <p>
+        The app is not intended for children under the age of 13.
+      </p>
+
+      <h4>Contact</h4>
+      <p>
+        arcbreaker.game@gmail.com
+      </p>
+    </div>
+
+    <!-- DE -->
+    <div class="lang de">
+      <h3>Datenschutzerklärung</h3>
+      <p>
+        ArcBreaker: Ringfall Arena ist ein kostenloses Spiel.
+        Es werden keine personenbezogenen Daten direkt gespeichert.
+      </p>
+
+      <h4>Werbung</h4>
+      <p>
+        Die App verwendet Google AdMob. Dabei können Geräteinformationen,
+        Werbe-IDs, IP-Adresse und Standortdaten verarbeitet werden.
+      </p>
+
+      <h4>Einwilligung (GDPR / UMP)</h4>
+      <p>
+        In relevanten Regionen wird die Einwilligung über die Google User
+        Messaging Platform eingeholt. Änderungen sind jederzeit möglich.
+      </p>
+
+      <h4>App Tracking Transparency</h4>
+      <p>
+        Personalisierte Werbung wird nur nach ausdrücklicher Zustimmung
+        angezeigt.
+      </p>
+
+      <h4>Kinder</h4>
+      <p>
+        Die App richtet sich nicht an Kinder unter 13 Jahren.
+      </p>
+
+      <h4>Kontakt</h4>
+      <p>
+        arcbreaker.game@gmail.com
+      </p>
+    </div>
+
+    <!-- ES -->
+    <div class="lang es">
+      <h3>Política de Privacidad</h3>
+      <p>
+        ArcBreaker: Ringfall Arena es un juego gratuito.
+        No recopilamos datos personales directamente.
+      </p>
+
+      <h4>Publicidad</h4>
+      <p>
+        La aplicación utiliza Google AdMob. Los anuncios personalizados solo
+        se muestran con el consentimiento del usuario.
+      </p>
+
+      <h4>Consentimiento</h4>
+      <p>
+        El consentimiento se gestiona mediante Google UMP y Apple ATT.
+      </p>
+
+      <h4>Contacto</h4>
+      <p>
+        arcbreaker.game@gmail.com
+      </p>
+    </div>
+
+    <!-- FR -->
+    <div class="lang fr">
+      <h3>Politique de Confidentialité</h3>
+      <p>
+        ArcBreaker: Ringfall Arena est un jeu gratuit.
+        Aucune donnée personnelle n’est stockée directement.
+      </p>
+
+      <h4>Publicité</h4>
+      <p>
+        L’application utilise Google AdMob. Les publicités personnalisées
+        nécessitent le consentement de l’utilisateur.
+      </p>
+
+      <h4>Consentement</h4>
+      <p>
+        Le consentement est géré via Google UMP et Apple ATT.
+      </p>
+
+      <h4>Contact</h4>
+      <p>
+        arcbreaker.game@gmail.com
+      </p>
+    </div>
+  </div>
+
+  <script>
+    function setLang(lang) {
+      localStorage.setItem("lang", lang);
+      document.querySelectorAll(".lang").forEach(el => el.style.display = "none");
+      document.querySelector("." + lang).style.display = "block";
+    }
+
+    function detectLang() {
+      const saved = localStorage.getItem("lang");
+      if (saved) return setLang(saved);
+
+      const browserLang = navigator.language.slice(0, 2);
+      if (["de", "es", "fr"].includes(browserLang)) {
+        setLang(browserLang);
+      } else {
+        setLang("en");
+      }
+    }
+
+    detectLang();
+  </script>
+</body>
+</html>
