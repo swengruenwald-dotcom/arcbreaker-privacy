@@ -1,207 +1,70 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>ArcBreaker: Ringfall Arena – Privacy Policy</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css" />
-</head>
+import SwiftUI
 
-<body>
-  <div class="container">
-    <h1 class="title">ARC BREAKER</h1>
-    <h2 class="subtitle">Ringfall Arena – Privacy Policy</h2>
-    <p style="text-align:center; opacity:0.7;">Last updated: January 2026</p>
+struct PrivacyView: View {
 
-    <!-- Language Switch -->
-    <div class="lang-switch">
-      <button onclick="setLang('en')">EN</button>
-      <button onclick="setLang('de')">DE</button>
-      <button onclick="setLang('es')">ES</button>
-      <button onclick="setLang('fr')">FR</button>
-    </div>
+    var body: some View {
+        ScrollView {
+            VStack(alignment: .leading, spacing: 20) {
 
-    <!-- ================= EN ================= -->
-    <div class="lang en">
-      <h3>Privacy Policy</h3>
+                Text("Privacy & Data Usage")
+                    .font(.title2)
+                    .bold()
 
-      <p>
-        ArcBreaker: Ringfall Arena is a free-to-play mobile game.
-        We do not directly collect or store personally identifiable information.
-      </p>
+                Group {
+                    Text("Advertising")
+                        .font(.headline)
 
-      <h4>Advertising (Google AdMob)</h4>
-      <p>
-        The app uses Google AdMob to display advertisements.
-        Google may process device information, advertising identifiers (IDFA),
-        IP address, and approximate location.
-      </p>
-      <p>
-        Personalized ads are shown only if the user has given consent via
-        Google’s User Messaging Platform (UMP) and Apple App Tracking Transparency (ATT).
-      </p>
-      <p>
-        Google privacy policy:
-        <a href="https://policies.google.com/privacy" target="_blank">https://policies.google.com/privacy</a>
-      </p>
+                    Text("""
+This app displays ads via Google AdMob.
+Personalized ads are only shown if you explicitly allow tracking via Apple's App Tracking Transparency.
+Otherwise, only non-personalized ads are shown.
+""")
+                }
 
-      <h4>User Consent (GDPR / UMP)</h4>
-      <p>
-        In regions where required, consent is collected using Google UMP.
-        Users may review or change their consent choices at any time
-        through the app’s privacy settings.
-      </p>
+                Group {
+                    Text("Tracking")
+                        .font(.headline)
 
-      <h4>App Tracking Transparency (ATT)</h4>
-      <p>
-        On iOS, tracking for personalized advertising is enabled only
-        if the user explicitly grants permission via Apple’s ATT prompt.
-      </p>
+                    Text("""
+Tracking is optional. You can allow or deny tracking at any time in your device settings.
+Your choice does not affect gameplay.
+""")
+                }
 
-      <h4>Leaderboards (Apple Game Center)</h4>
-      <p>
-        The app uses Apple Game Center to provide leaderboards.
-        Player scores and Game Center profile information
-        are processed by Apple in accordance with Apple’s privacy policies.
-        The developer does not access or store personal Game Center account data.
-      </p>
+                Group {
+                    Text("Game Center")
+                        .font(.headline)
 
-      <h4>Analytics & Backend Services (Supabase)</h4>
-      <p>
-        The app uses Supabase to collect strictly anonymous technical data.
-        This may include performance metrics, session durations,
-        crash reports, and automatically generated usage statistics.
-      </p>
-      <p>
-        This data cannot be used to identify a specific person and is not
-        linked to names, email addresses, advertising identifiers, or
-        other personal data.
-      </p>
+                    Text("""
+Leaderboards and achievements are provided via Apple Game Center.
+Apple manages and processes this data independently.
+""")
+                }
 
-      <h4>Legal Basis</h4>
-      <p>
-        Data processing is based on user consent (where required)
-        or legitimate interest for maintaining and improving the app.
-      </p>
+                Group {
+                    Text("Diagnostics & Performance")
+                        .font(.headline)
 
-      <h4>User Rights</h4>
-      <p>
-        Depending on your location, you may have the right to access your data,
-        withdraw consent, and request deletion.
-      </p>
+                    Text("""
+Anonymous technical data may be collected to detect bugs, improve performance,
+and enhance gameplay. No personal data or identifiers are stored.
+""")
+                }
 
-      <h4>Children’s Privacy</h4>
-      <p>
-        The app is not intended for children under the age of 13.
-        We do not knowingly collect personal data from children.
-      </p>
+                Group {
+                    Text("Full Privacy Policy")
+                        .font(.headline)
 
-      <h4>Contact</h4>
-      <p>arcbreaker.game@gmail.com</p>
-    </div>
+                    Link(
+                        "View full privacy policy",
+                        destination: URL(string: "https://swengruenwald-dotcom.github.io/arcbreaker-privacy/")!
+                    )
+                }
 
-    <!-- ================= DE ================= -->
-    <div class="lang de">
-      <h3>Datenschutzerklärung</h3>
-
-      <p>
-        ArcBreaker: Ringfall Arena ist ein kostenloses mobiles Spiel.
-        Es werden keine direkt personenbezogenen Daten gespeichert.
-      </p>
-
-      <h4>Werbung (Google AdMob)</h4>
-      <p>
-        Die App verwendet Google AdMob zur Anzeige von Werbung.
-        Dabei können Geräteinformationen, Werbe-IDs (IDFA),
-        IP-Adresse und ungefähre Standortdaten verarbeitet werden.
-      </p>
-      <p>
-        Personalisierte Werbung erfolgt nur nach Einwilligung über
-        Google UMP und Apple App Tracking Transparency.
-      </p>
-
-      <h4>Bestenlisten (Apple Game Center)</h4>
-      <p>
-        Für Bestenlisten wird Apple Game Center genutzt.
-        Die Datenverarbeitung erfolgt durch Apple gemäß deren Datenschutzrichtlinien.
-      </p>
-
-      <h4>Analyse & Backend (Supabase)</h4>
-      <p>
-        Supabase wird zur Erfassung ausschließlich anonymer technischer Daten
-        wie Performance-Kennzahlen, Sitzungsdauer und Fehlermeldungen verwendet.
-        Eine Identifizierung von Nutzern ist nicht möglich.
-      </p>
-
-      <h4>Kontakt</h4>
-      <p>arcbreaker.game@gmail.com</p>
-    </div>
-
-    <!-- ================= ES ================= -->
-    <div class="lang es">
-      <h3>Política de Privacidad</h3>
-
-      <p>
-        ArcBreaker: Ringfall Arena es un juego gratuito.
-        No recopilamos datos personales identificables.
-      </p>
-
-      <h4>Publicidad y Analítica</h4>
-      <p>
-        Se utilizan anuncios (Google AdMob) y datos técnicos anónimos
-        mediante Supabase para mejorar el rendimiento y la experiencia del usuario.
-      </p>
-
-      <h4>Clasificaciones</h4>
-      <p>
-        Las clasificaciones se gestionan mediante Apple Game Center.
-      </p>
-
-      <h4>Contacto</h4>
-      <p>arcbreaker.game@gmail.com</p>
-    </div>
-
-    <!-- ================= FR ================= -->
-    <div class="lang fr">
-      <h3>Politique de Confidentialité</h3>
-
-      <p>
-        ArcBreaker: Ringfall Arena est un jeu gratuit.
-        Aucune donnée personnelle identifiable n’est collectée directement.
-      </p>
-
-      <h4>Publicité et Analytique</h4>
-      <p>
-        L’application utilise Google AdMob et des données techniques anonymes
-        via Supabase pour améliorer la stabilité et les performances.
-      </p>
-
-      <h4>Classements</h4>
-      <p>
-        Les classements sont fournis via Apple Game Center.
-      </p>
-
-      <h4>Contact</h4>
-      <p>arcbreaker.game@gmail.com</p>
-    </div>
-  </div>
-
-  <script>
-    function setLang(lang) {
-      localStorage.setItem("lang", lang);
-      document.querySelectorAll(".lang").forEach(el => el.style.display = "none");
-      document.querySelector("." + lang).style.display = "block";
+                Spacer()
+            }
+            .padding()
+        }
+        .navigationTitle("Privacy")
     }
-
-    function detectLang() {
-      const saved = localStorage.getItem("lang");
-      if (saved) return setLang(saved);
-      const browserLang = navigator.language.slice(0, 2);
-      if (["de", "es", "fr"].includes(browserLang)) setLang(browserLang);
-      else setLang("en");
-    }
-
-    detectLang();
-  </script>
-</body>
-</html>
+}
