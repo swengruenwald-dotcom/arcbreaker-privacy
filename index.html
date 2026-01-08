@@ -1,70 +1,243 @@
-import SwiftUI
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>ArcBreaker: Ringfall Arena – Privacy Policy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+</head>
 
-struct PrivacyView: View {
+<body>
+<header>
+  <h1>ArcBreaker: Ringfall Arena</h1>
+  <nav>
+    <button onclick="setLang('de')">DE</button>
+    <button onclick="setLang('en')">EN</button>
+    <button onclick="setLang('es')">ES</button>
+    <button onclick="setLang('fr')">FR</button>
+  </nav>
+</header>
 
-    var body: some View {
-        ScrollView {
-            VStack(alignment: .leading, spacing: 20) {
+<main id="content"></main>
 
-                Text("Privacy & Data Usage")
-                    .font(.title2)
-                    .bold()
+<footer>
+  © 2026 HafenEnte · Swen Grünwald
+</footer>
 
-                Group {
-                    Text("Advertising")
-                        .font(.headline)
+<script>
+const texts = {
 
-                    Text("""
-This app displays ads via Google AdMob.
-Personalized ads are only shown if you explicitly allow tracking via Apple's App Tracking Transparency.
-Otherwise, only non-personalized ads are shown.
-""")
-                }
+de: `
+<section>
+<h2>Impressum</h2>
+<p>
+<strong>Name:</strong> Swen Grünwald<br>
+<strong>Firmenname:</strong> HafenEnte<br>
+<strong>Adresse:</strong><br>
+Grindelallee 110<br>
+20146 Hamburg<br>
+Deutschland<br><br>
+<strong>Telefon:</strong> +49 176 34313254<br>
+<strong>E-Mail:</strong> info@hafenente.de
+</p>
 
-                Group {
-                    Text("Tracking")
-                        .font(.headline)
+<p>
+Einzelunternehmer (Kleinunternehmer gemäß §19 UStG).
+</p>
+</section>
 
-                    Text("""
-Tracking is optional. You can allow or deny tracking at any time in your device settings.
-Your choice does not affect gameplay.
-""")
-                }
+<section>
+<h2>Datenschutzerklärung</h2>
+<p>
+Diese Datenschutzerklärung gilt für die mobile App
+<strong>„ArcBreaker: Ringfall Arena“</strong>.
+</p>
+</section>
 
-                Group {
-                    Text("Game Center")
-                        .font(.headline)
+<section>
+<h3>Verantwortlicher</h3>
+<p>
+Swen Grünwald (HafenEnte)<br>
+Grindelallee 110<br>
+20146 Hamburg<br>
+Deutschland
+</p>
+</section>
 
-                    Text("""
-Leaderboards and achievements are provided via Apple Game Center.
-Apple manages and processes this data independently.
-""")
-                }
+<section>
+<h3>Werbung (Google AdMob)</h3>
+<p>
+Die App verwendet Google AdMob zur Anzeige von Werbung.
+In der EU erfolgt die Einholung der Einwilligung über die
+Google User Messaging Platform (UMP).
+</p>
 
-                Group {
-                    Text("Diagnostics & Performance")
-                        .font(.headline)
+<p>
+Personalisierte Werbung wird nur angezeigt, wenn:
+</p>
+<ul>
+<li>eine entsprechende Einwilligung erteilt wurde (UMP)</li>
+<li>und App Tracking Transparency (ATT) von Apple genehmigt wurde</li>
+</ul>
 
-                    Text("""
-Anonymous technical data may be collected to detect bugs, improve performance,
-and enhance gameplay. No personal data or identifiers are stored.
-""")
-                }
+<p>
+Andernfalls werden ausschließlich nicht-personalisierte Anzeigen angezeigt.
+</p>
+</section>
 
-                Group {
-                    Text("Full Privacy Policy")
-                        .font(.headline)
+<section>
+<h3>App Tracking Transparency (ATT)</h3>
+<p>
+Die App nutzt das Apple App Tracking Transparency Framework.
+Ein Zugriff auf die Werbe-ID (IDFA) erfolgt nur nach ausdrücklicher Zustimmung.
+</p>
+</section>
 
-                    Link(
-                        "View full privacy policy",
-                        destination: URL(string: "https://swengruenwald-dotcom.github.io/arcbreaker-privacy/")!
-                    )
-                }
+<section>
+<h3>Apple Game Center</h3>
+<p>
+Für Bestenlisten und Erfolge wird Apple Game Center verwendet.
+Dabei verarbeitet Apple eigenständig Spielername, Spieler-ID und Spielstände.
+</p>
+</section>
 
-                Spacer()
-            }
-            .padding()
-        }
-        .navigationTitle("Privacy")
-    }
+<section>
+<h3>Supabase (anonyme Telemetrie)</h3>
+<p>
+Zur Fehleranalyse, Leistungsoptimierung und Verbesserung der Nutzererfahrung
+werden anonyme Ereignisdaten über Supabase verarbeitet.
+</p>
+<ul>
+<li>keine Namen</li>
+<li>keine E-Mail-Adressen</li>
+<li>keine Werbe-IDs</li>
+<li>keine IP-Adressen im Klartext</li>
+</ul>
+<p>
+Die Verarbeitung erfolgt ausschließlich zu technischen Zwecken.
+</p>
+</section>
+
+<section>
+<h3>Internationale Datenverarbeitung</h3>
+<p>
+Je nach Standort des Nutzers kann eine Datenverarbeitung außerhalb
+des jeweiligen Landes erfolgen. Dabei werden geeignete Schutzmaßnahmen
+wie Standardvertragsklauseln eingesetzt.
+</p>
+</section>
+
+<section>
+<h3>Rechte der Nutzer</h3>
+<p>
+Sie haben das Recht auf Auskunft, Berichtigung, Löschung sowie Einschränkung
+der Verarbeitung Ihrer Daten.
+</p>
+</section>
+`,
+
+en: `
+<section>
+<h2>Privacy Policy</h2>
+<p>
+This privacy policy applies to the mobile app
+<strong>“ArcBreaker: Ringfall Arena”</strong>.
+</p>
+</section>
+
+<section>
+<h3>Controller</h3>
+<p>
+Swen Grünwald (HafenEnte)<br>
+Hamburg, Germany
+</p>
+</section>
+
+<section>
+<h3>Advertising (Google AdMob)</h3>
+<p>
+The app uses Google AdMob to display ads.
+Personalized ads are only shown if the user has given consent
+and App Tracking Transparency permission is authorized.
+</p>
+<p>
+Otherwise, only non-personalized ads are displayed.
+</p>
+</section>
+
+<section>
+<h3>App Tracking Transparency</h3>
+<p>
+Tracking is optional and controlled via Apple’s App Tracking Transparency.
+Access to the advertising identifier (IDFA) is only granted with user consent.
+</p>
+</section>
+
+<section>
+<h3>Apple Game Center</h3>
+<p>
+Leaderboards and achievements are provided through Apple Game Center.
+Apple processes this data independently.
+</p>
+</section>
+
+<section>
+<h3>Supabase (Anonymous Telemetry)</h3>
+<p>
+Anonymous technical data is processed to detect bugs,
+improve performance, and enhance user experience.
+No personal data is stored.
+</p>
+</section>
+
+<section>
+<h3>International Data Transfers</h3>
+<p>
+Data may be processed outside the user’s country.
+Appropriate safeguards such as standard contractual clauses are applied.
+</p>
+</section>
+`,
+
+es: `
+<section>
+<h2>Política de Privacidad</h2>
+<p>
+Esta aplicación utiliza Google AdMob, Apple Game Center y Supabase.
+Los anuncios personalizados solo se muestran con el consentimiento del usuario.
+</p>
+<p>
+Los datos técnicos se recopilan de forma anónima para mejorar el rendimiento
+y detectar errores.
+</p>
+</section>
+`,
+
+fr: `
+<section>
+<h2>Politique de Confidentialité</h2>
+<p>
+Cette application utilise Google AdMob, Apple Game Center et Supabase.
+Les publicités personnalisées ne sont affichées qu’avec le consentement explicite de l’utilisateur.
+</p>
+<p>
+Des données techniques anonymes peuvent être collectées à des fins d’amélioration.
+</p>
+</section>
+`
+};
+
+function detectLang() {
+  const lang = navigator.language.slice(0,2);
+  return texts[lang] ? lang : 'en';
 }
+
+function setLang(lang) {
+  document.getElementById("content").innerHTML = texts[lang];
+  document.documentElement.lang = lang;
+}
+
+setLang(detectLang());
+</script>
+</body>
+</html>
