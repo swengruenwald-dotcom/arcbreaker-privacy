@@ -10,11 +10,15 @@
 
 <body>
 <header>
-  <h1>ArcBreaker: Ringfall Arena</h1>
+  <div class="header-row">
+    <a class="back" href="/" aria-label="Back to home" data-i18n="back">← Back</a>
+    <h1>ArcBreaker: Ringfall Arena</h1>
+    <span class="header-spacer" aria-hidden="true"></span>
+  </div>
   <nav>
-    <a class="navlink" href="/">Home</a>
-    <a class="navlink" href="/support/">Support</a>
-    <a class="navlink" href="/privacy/">Privacy</a>
+    <a class="navlink" href="/" data-i18n="nav_home">Home</a>
+    <a class="navlink" href="/support/" data-i18n="nav_support">Support</a>
+    <a class="navlink" href="/privacy/" data-i18n="nav_privacy">Privacy</a>
   </nav>
   <nav aria-label="Language">
     <button onclick="setLang('de')">DE</button>
@@ -32,6 +36,13 @@
 
 <script>
 const supportEmail = "info@hafenente.de";
+
+const navLabels = {
+  en: { nav_home: "Home", nav_support: "Support", nav_privacy: "Privacy", back: "← Back" },
+  de: { nav_home: "Start", nav_support: "Support", nav_privacy: "Datenschutz", back: "← Zurück" },
+  es: { nav_home: "Inicio", nav_support: "Soporte", nav_privacy: "Privacidad", back: "← Volver" },
+  fr: { nav_home: "Accueil", nav_support: "Assistance", nav_privacy: "Confidentialité", back: "← Retour" },
+};
 
 function escapeMailBody(s) {
   return encodeURIComponent((s || "").trim());
@@ -177,9 +188,9 @@ const texts = {
 
   fr: `
 <section>
-  <h2>Contacter l\'assistance</h2>
+  <h2>Contacter l'assistance</h2>
   <p>
-    Utilisez le formulaire ci-dessous. Votre application Mail s\'ouvrira avec un message pré-rempli.
+    Utilisez le formulaire ci-dessous. Votre application Mail s'ouvrira avec un message pré-rempli.
     Vous pouvez aussi nous écrire directement à <a href="mailto:${supportEmail}">${supportEmail}</a>.
   </p>
 </section>
@@ -193,7 +204,7 @@ const texts = {
     <label for="support_contact">Votre email (optionnel)</label>
     <input id="support_contact" type="email" placeholder="name@example.com" />
 
-    <label for="support_version">Version de l\'app (dans Crédits, ex. Version 1.2.3 (45))</label>
+    <label for="support_version">Version de l'app (dans Crédits, ex. Version 1.2.3 (45))</label>
     <input id="support_version" type="text" placeholder="Version ..." />
 
     <label for="support_device">Appareil (optionnel)</label>
@@ -202,12 +213,20 @@ const texts = {
     <label for="support_ios">Version iOS (optionnel)</label>
     <input id="support_ios" type="text" placeholder="ex. iOS 17.3" />
 
-    <button id="sendBtn" class="cta" type="button">Ouvrir le brouillon d\'email</button>
+    <button id="sendBtn" class="cta" type="button">Ouvrir le brouillon d'email</button>
   </form>
   <p class="muted">Remarque : cette page ne stocke aucune donnée. Le message est créé sur votre appareil.</p>
 </section>
 `
 };
+
+function applyNav(lang) {
+  const labels = navLabels[lang] || navLabels.en;
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (labels[key]) el.textContent = labels[key];
+  });
+}
 
 function detectLang() {
   const lang = navigator.language.slice(0,2);
@@ -217,6 +236,7 @@ function detectLang() {
 function setLang(lang) {
   document.getElementById("content").innerHTML = texts[lang];
   document.documentElement.lang = lang;
+  applyNav(lang);
   wireUp(lang);
 }
 

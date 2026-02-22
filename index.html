@@ -12,9 +12,9 @@
 <header>
   <h1>ArcBreaker: Ringfall Arena</h1>
   <nav>
-    <a class="navlink" href="/">Home</a>
-    <a class="navlink" href="/support/">Support</a>
-    <a class="navlink" href="/privacy/">Privacy</a>
+    <a class="navlink" href="/" data-i18n="nav_home">Home</a>
+    <a class="navlink" href="/support/" data-i18n="nav_support">Support</a>
+    <a class="navlink" href="/privacy/" data-i18n="nav_privacy">Privacy</a>
   </nav>
   <nav aria-label="Language">
     <button onclick="setLang('de')">DE</button>
@@ -35,6 +35,13 @@ const appStoreUrl = "https://apps.apple.com/us/app/arcbreaker-ringfall-arena/id6
 const availability = "Sweden, Norway, Finland, Philippines";
 const availabilityUpdated = "2026-02-22";
 
+const navLabels = {
+  en: { nav_home: "Home", nav_support: "Support", nav_privacy: "Privacy" },
+  de: { nav_home: "Start", nav_support: "Support", nav_privacy: "Datenschutz" },
+  es: { nav_home: "Inicio", nav_support: "Soporte", nav_privacy: "Privacidad" },
+  fr: { nav_home: "Accueil", nav_support: "Assistance", nav_privacy: "Confidentialité" },
+};
+
 const texts = {
   en: `
 <section>
@@ -42,7 +49,7 @@ const texts = {
   <p>
     ArcBreaker is a fast arcade game where timing and precision matter.
     Break bricks, protect the lower half, collect power-ups, and climb the leaderboard.
-    It\'s built for casual, quick sessions and includes Game Center integration for global and friends leaderboards.
+    It's built for casual, quick sessions and includes Game Center integration for global and friends leaderboards.
   </p>
   <p class="cta-row">
     <a class="cta" href="${appStoreUrl}" target="_blank" rel="noopener">Get it on the App Store</a>
@@ -52,18 +59,25 @@ const texts = {
 
 <section>
   <h2>Screenshots</h2>
-  <p>Add your screenshots to <code>/assets</code> and update the list below.</p>
   <div class="gallery">
     <figure>
-      <div class="ph">Screenshot 1</div>
-      <figcaption>Gameplay</figcaption>
+      <img class="shot" src="/assets/MakePoints.jpg" alt="ArcBreaker screenshot: Make points" loading="lazy" />
+      <figcaption>Make points</figcaption>
     </figure>
     <figure>
-      <div class="ph">Screenshot 2</div>
-      <figcaption>Power-ups</figcaption>
+      <img class="shot" src="/assets/ControlYourHalf.jpg" alt="ArcBreaker screenshot: Control your half" loading="lazy" />
+      <figcaption>Control your half</figcaption>
     </figure>
     <figure>
-      <div class="ph">Screenshot 3</div>
+      <img class="shot" src="/assets/Powerups.jpg" alt="ArcBreaker screenshot: Use powerups" loading="lazy" />
+      <figcaption>Use power-ups</figcaption>
+    </figure>
+    <figure>
+      <img class="shot" src="/assets/LevelUp.jpg" alt="ArcBreaker screenshot: Level up" loading="lazy" />
+      <figcaption>Level up</figcaption>
+    </figure>
+    <figure>
+      <img class="shot" src="/assets/leaderboards.jpg" alt="ArcBreaker screenshot: Leaderboards" loading="lazy" />
       <figcaption>Leaderboards</figcaption>
     </figure>
   </div>
@@ -100,18 +114,25 @@ const texts = {
 
 <section>
   <h2>Screenshots</h2>
-  <p>Lege deine Screenshots unter <code>/assets</code> ab und aktualisiere die Liste unten.</p>
   <div class="gallery">
     <figure>
-      <div class="ph">Screenshot 1</div>
-      <figcaption>Gameplay</figcaption>
+      <img class="shot" src="/assets/MakePoints.jpg" alt="ArcBreaker Screenshot: Punkte machen" loading="lazy" />
+      <figcaption>Punkte machen</figcaption>
     </figure>
     <figure>
-      <div class="ph">Screenshot 2</div>
-      <figcaption>Power-ups</figcaption>
+      <img class="shot" src="/assets/ControlYourHalf.jpg" alt="ArcBreaker Screenshot: Kontrolliere deine Hälfte" loading="lazy" />
+      <figcaption>Kontrolliere deine Hälfte</figcaption>
     </figure>
     <figure>
-      <div class="ph">Screenshot 3</div>
+      <img class="shot" src="/assets/Powerups.jpg" alt="ArcBreaker Screenshot: Power-ups nutzen" loading="lazy" />
+      <figcaption>Power-ups nutzen</figcaption>
+    </figure>
+    <figure>
+      <img class="shot" src="/assets/LevelUp.jpg" alt="ArcBreaker Screenshot: Level up" loading="lazy" />
+      <figcaption>Level up</figcaption>
+    </figure>
+    <figure>
+      <img class="shot" src="/assets/leaderboards.jpg" alt="ArcBreaker Screenshot: Bestenlisten" loading="lazy" />
       <figcaption>Bestenlisten</figcaption>
     </figure>
   </div>
@@ -148,18 +169,25 @@ const texts = {
 
 <section>
   <h2>Capturas</h2>
-  <p>Guarda tus capturas en <code>/assets</code> y actualiza la lista de abajo.</p>
   <div class="gallery">
     <figure>
-      <div class="ph">Captura 1</div>
-      <figcaption>Juego</figcaption>
+      <img class="shot" src="/assets/MakePoints.jpg" alt="Captura de ArcBreaker: Haz puntos" loading="lazy" />
+      <figcaption>Haz puntos</figcaption>
     </figure>
     <figure>
-      <div class="ph">Captura 2</div>
-      <figcaption>Potenciadores</figcaption>
+      <img class="shot" src="/assets/ControlYourHalf.jpg" alt="Captura de ArcBreaker: Controla tu mitad" loading="lazy" />
+      <figcaption>Controla tu mitad</figcaption>
     </figure>
     <figure>
-      <div class="ph">Captura 3</div>
+      <img class="shot" src="/assets/Powerups.jpg" alt="Captura de ArcBreaker: Usa potenciadores" loading="lazy" />
+      <figcaption>Usa potenciadores</figcaption>
+    </figure>
+    <figure>
+      <img class="shot" src="/assets/LevelUp.jpg" alt="Captura de ArcBreaker: Sube de nivel" loading="lazy" />
+      <figcaption>Sube de nivel</figcaption>
+    </figure>
+    <figure>
+      <img class="shot" src="/assets/leaderboards.jpg" alt="Captura de ArcBreaker: Clasificaciones" loading="lazy" />
       <figcaption>Clasificaciones</figcaption>
     </figure>
   </div>
@@ -184,30 +212,37 @@ const texts = {
 <section>
   <h2>Action arcade rapide</h2>
   <p>
-    ArcBreaker est un jeu d\'arcade rapide où le timing et la précision comptent.
+    ArcBreaker est un jeu d'arcade rapide où le timing et la précision comptent.
     Cassez des briques, protégez la moitié inférieure, récupérez des power-ups et grimpez dans le classement.
     Conçu pour des sessions courtes et casual, avec intégration Game Center pour les classements mondiaux et amis.
   </p>
   <p class="cta-row">
-    <a class="cta" href="${appStoreUrl}" target="_blank" rel="noopener">Voir sur l\'App Store</a>
+    <a class="cta" href="${appStoreUrl}" target="_blank" rel="noopener">Voir sur l'App Store</a>
     <a class="cta secondary" href="/support/">Assistance</a>
   </p>
 </section>
 
 <section>
-  <h2>Captures d\'écran</h2>
-  <p>Ajoutez vos captures dans <code>/assets</code> puis mettez à jour la liste ci-dessous.</p>
+  <h2>Captures d'écran</h2>
   <div class="gallery">
     <figure>
-      <div class="ph">Capture 1</div>
-      <figcaption>Gameplay</figcaption>
+      <img class="shot" src="/assets/MakePoints.jpg" alt="Capture ArcBreaker : Marquer des points" loading="lazy" />
+      <figcaption>Marquer des points</figcaption>
     </figure>
     <figure>
-      <div class="ph">Capture 2</div>
-      <figcaption>Power-ups</figcaption>
+      <img class="shot" src="/assets/ControlYourHalf.jpg" alt="Capture ArcBreaker : Contrôlez votre moitié" loading="lazy" />
+      <figcaption>Contrôlez votre moitié</figcaption>
     </figure>
     <figure>
-      <div class="ph">Capture 3</div>
+      <img class="shot" src="/assets/Powerups.jpg" alt="Capture ArcBreaker : Utiliser des power-ups" loading="lazy" />
+      <figcaption>Utiliser des power-ups</figcaption>
+    </figure>
+    <figure>
+      <img class="shot" src="/assets/LevelUp.jpg" alt="Capture ArcBreaker : Monter de niveau" loading="lazy" />
+      <figcaption>Monter de niveau</figcaption>
+    </figure>
+    <figure>
+      <img class="shot" src="/assets/leaderboards.jpg" alt="Capture ArcBreaker : Classements" loading="lazy" />
       <figcaption>Classements</figcaption>
     </figure>
   </div>
@@ -229,6 +264,14 @@ const texts = {
 `
 };
 
+function applyNav(lang) {
+  const labels = navLabels[lang] || navLabels.en;
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (labels[key]) el.textContent = labels[key];
+  });
+}
+
 function detectLang() {
   const lang = navigator.language.slice(0,2);
   return texts[lang] ? lang : 'en';
@@ -237,6 +280,7 @@ function detectLang() {
 function setLang(lang) {
   document.getElementById("content").innerHTML = texts[lang];
   document.documentElement.lang = lang;
+  applyNav(lang);
 }
 
 setLang(detectLang());

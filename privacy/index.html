@@ -9,7 +9,16 @@
 
 <body>
 <header>
-  <h1>ArcBreaker: Ringfall Arena</h1>
+  <div class="header-row">
+    <a class="back" href="/" aria-label="Back to home" data-i18n="back">← Back</a>
+    <h1>ArcBreaker: Ringfall Arena</h1>
+    <span class="header-spacer" aria-hidden="true"></span>
+  </div>
+  <nav>
+    <a class="navlink" href="/" data-i18n="nav_home">Home</a>
+    <a class="navlink" href="/support/" data-i18n="nav_support">Support</a>
+    <a class="navlink" href="/privacy/" data-i18n="nav_privacy">Privacy</a>
+  </nav>
   <nav>
     <button onclick="setLang('de')">DE</button>
     <button onclick="setLang('en')">EN</button>
@@ -25,7 +34,16 @@
 </footer>
 
 <script>
+const navLabels = {
+  en: { nav_home: "Home", nav_support: "Support", nav_privacy: "Privacy", back: "← Back" },
+  de: { nav_home: "Start", nav_support: "Support", nav_privacy: "Datenschutz", back: "← Zurück" },
+  es: { nav_home: "Inicio", nav_support: "Soporte", nav_privacy: "Privacidad", back: "← Volver" },
+  fr: { nav_home: "Accueil", nav_support: "Assistance", nav_privacy: "Confidentialité", back: "← Retour" },
+};
+
 const texts = {
+
+// (existing texts unchanged below)
 
 de: `
 <section>
@@ -440,6 +458,14 @@ de suppression et de limitation du traitement de leurs données personnelles.
 `
 };
 
+function applyNav(lang) {
+  const labels = navLabels[lang] || navLabels.en;
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (labels[key]) el.textContent = labels[key];
+  });
+}
+
 function detectLang() {
   const lang = navigator.language.slice(0,2);
   return texts[lang] ? lang : 'en';
@@ -448,6 +474,7 @@ function detectLang() {
 function setLang(lang) {
   document.getElementById("content").innerHTML = texts[lang];
   document.documentElement.lang = lang;
+  applyNav(lang);
 }
 
 setLang(detectLang());
