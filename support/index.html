@@ -9,23 +9,32 @@
 </head>
 
 <body>
-<header>
-  <div class="header-row">
-    <a class="back" href="/" aria-label="Back to home" data-i18n="back">← Back</a>
-    <h1>ArcBreaker: Ringfall Arena</h1>
-    <span class="header-spacer" aria-hidden="true"></span>
+<header class="top">
+  <div class="topbar">
+    <div class="brand">
+      <img class="appicon" src="/assets/App_icon_2.png" alt="ArcBreaker app icon" />
+      <div class="brandtext">
+        <div class="title">ARC</div>
+        <div class="title">BREAKER</div>
+        <div class="subtitle">RINGFALL ARENA</div>
+      </div>
+    </div>
+
+    <div class="top-actions">
+      <div class="lang" aria-label="Language">
+        <button onclick="setLang('de')">DE</button>
+        <button onclick="setLang('en')">EN</button>
+        <button onclick="setLang('es')">ES</button>
+        <button onclick="setLang('fr')">FR</button>
+      </div>
+
+      <nav class="nav">
+        <a class="navlink" href="/" data-i18n="nav_home">Home</a>
+        <a class="navlink" href="/support/" data-i18n="nav_support">Support</a>
+        <a class="navlink" href="/privacy/" data-i18n="nav_privacy">Privacy</a>
+      </nav>
+    </div>
   </div>
-  <nav>
-    <a class="navlink" href="/" data-i18n="nav_home">Home</a>
-    <a class="navlink" href="/support/" data-i18n="nav_support">Support</a>
-    <a class="navlink" href="/privacy/" data-i18n="nav_privacy">Privacy</a>
-  </nav>
-  <nav aria-label="Language">
-    <button onclick="setLang('de')">DE</button>
-    <button onclick="setLang('en')">EN</button>
-    <button onclick="setLang('es')">ES</button>
-    <button onclick="setLang('fr')">FR</button>
-  </nav>
 </header>
 
 <main id="content"></main>
@@ -38,10 +47,10 @@
 const supportEmail = "info@hafenente.de";
 
 const navLabels = {
-  en: { nav_home: "Home", nav_support: "Support", nav_privacy: "Privacy", back: "← Back" },
-  de: { nav_home: "Start", nav_support: "Support", nav_privacy: "Datenschutz", back: "← Zurück" },
-  es: { nav_home: "Inicio", nav_support: "Soporte", nav_privacy: "Privacidad", back: "← Volver" },
-  fr: { nav_home: "Accueil", nav_support: "Assistance", nav_privacy: "Confidentialité", back: "← Retour" },
+  en: { nav_home: "Home", nav_support: "Support", nav_privacy: "Privacy" },
+  de: { nav_home: "Start", nav_support: "Support", nav_privacy: "Datenschutz" },
+  es: { nav_home: "Inicio", nav_support: "Soporte", nav_privacy: "Privacidad" },
+  fr: { nav_home: "Accueil", nav_support: "Assistance", nav_privacy: "Confidentialité" },
 };
 
 function escapeMailBody(s) {

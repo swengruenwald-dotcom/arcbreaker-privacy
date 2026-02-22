@@ -50,7 +50,6 @@ body {
   align-items: center;
 }
 
-/* user requested: much smaller icon */
 .appicon {
   width: 32px;
   height: 32px;
@@ -255,7 +254,7 @@ footer {
               rgba(2, 8, 20, 0.18);
   padding: 16px;
   display: grid;
-  gap: 14px;
+  gap: 18px;
   align-content: start;
 }
 
@@ -292,10 +291,16 @@ footer {
   color: rgba(155, 182, 211, 0.95);
 }
 
-.storebadge {
-  width: 210px;
-  height: auto;
+.storecta {
   justify-self: center;
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(47, 242, 255, 0.22);
+  background: rgba(2, 8, 20, 0.35);
+  color: rgba(230, 240, 255, 0.95);
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .gallery.modern {
@@ -326,6 +331,41 @@ figcaption {
 
 .muted {
   color: rgba(155, 182, 211, 0.95);
+}
+
+.form {
+  display: grid;
+  gap: 10px;
+}
+
+label {
+  font-weight: 600;
+  color: rgba(230, 240, 255, 0.9);
+}
+
+input, textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(58, 110, 165, 0.35);
+  background: rgba(2, 8, 20, 0.35);
+  color: var(--text-main);
+}
+
+input::placeholder, textarea::placeholder {
+  color: rgba(155, 182, 211, 0.75);
+}
+
+.cta {
+  display: inline-block;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(47, 242, 255, 0.95);
+  color: rgba(2, 8, 20, 0.92);
+  text-decoration: none;
+  font-weight: 800;
+  border: 1px solid rgba(47, 242, 255, 0.35);
 }
 
 @media (max-width: 900px) {
