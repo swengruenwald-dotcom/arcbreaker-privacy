@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>ArcBreaker: Ringfall Arena</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="ArcBreaker: Ringfall Arena is a fast arcade game where timing and precision matter." />
+  <link rel="stylesheet" href="/site/style.css" />
+</head>
+
+<body>
+<header>
+  <h1>ArcBreaker: Ringfall Arena</h1>
+  <nav>
+    <a class="navlink" href="/">Home</a>
+    <a class="navlink" href="/support/">Support</a>
+    <a class="navlink" href="/privacy/">Privacy</a>
+  </nav>
+  <nav aria-label="Language">
+    <button onclick="setLang('de')">DE</button>
+    <button onclick="setLang('en')">EN</button>
+    <button onclick="setLang('es')">ES</button>
+    <button onclick="setLang('fr')">FR</button>
+  </nav>
+</header>
+
+<main id="content"></main>
+
+<footer>
+  © 2026 HafenEnte · Swen Grünwald
+</footer>
+
+<script>
+const appStoreUrl = "https://apps.apple.com/us/app/arcbreaker-ringfall-arena/id6757078402";
+const availability = "Sweden, Norway, Finland, Philippines";
+const availabilityUpdated = "2026-02-22";
+
+const texts = {
+  en: `
+<section>
+  <h2>Fast arcade action</h2>
+  <p>
+    ArcBreaker is a fast arcade game where timing and precision matter.
+    Break bricks, protect the lower half, collect power-ups, and climb the leaderboard.
+    It\'s built for casual, quick sessions and includes Game Center integration for global and friends leaderboards.
+  </p>
+  <p class="cta-row">
+    <a class="cta" href="${appStoreUrl}" target="_blank" rel="noopener">Get it on the App Store</a>
+    <a class="cta secondary" href="/support/">Support</a>
+  </p>
+</section>
+
+<section>
+  <h2>Screenshots</h2>
+  <p>Add your screenshots to <code>/assets</code> and update the list below.</p>
+  <div class="gallery">
+    <figure>
+      <div class="ph">Screenshot 1</div>
+      <figcaption>Gameplay</figcaption>
+    </figure>
+    <figure>
+      <div class="ph">Screenshot 2</div>
+      <figcaption>Power-ups</figcaption>
+    </figure>
+    <figure>
+      <div class="ph">Screenshot 3</div>
+      <figcaption>Leaderboards</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section>
+  <h2>Availability</h2>
+  <p><strong>Currently available in:</strong> ${availability}</p>
+  <p class="muted">Last updated: ${availabilityUpdated}</p>
+</section>
+
+<section>
+  <h2>Links</h2>
+  <ul>
+    <li><a href="/support/">Support</a></li>
+    <li><a href="/privacy/">Privacy policy</a></li>
+  </ul>
+</section>
+`,
+
+  de: `
+<section>
+  <h2>Schnelle Arcade-Action</h2>
+  <p>
+    ArcBreaker ist ein schnelles Arcade-Spiel, bei dem Timing und Präzision zählen.
+    Zerstöre Blöcke, schütze die untere Hälfte, sammle Power-ups und klettere in der Bestenliste.
+    Es ist für kurze, lockere Sessions gebaut und bietet Game-Center-Integration für globale und Freunde-Bestenlisten.
+  </p>
+  <p class="cta-row">
+    <a class="cta" href="${appStoreUrl}" target="_blank" rel="noopener">Im App Store ansehen</a>
+    <a class="cta secondary" href="/support/">Support</a>
+  </p>
+</section>
+
+<section>
+  <h2>Screenshots</h2>
+  <p>Lege deine Screenshots unter <code>/assets</code> ab und aktualisiere die Liste unten.</p>
+  <div class="gallery">
+    <figure>
+      <div class="ph">Screenshot 1</div>
+      <figcaption>Gameplay</figcaption>
+    </figure>
+    <figure>
+      <div class="ph">Screenshot 2</div>
+      <figcaption>Power-ups</figcaption>
+    </figure>
+    <figure>
+      <div class="ph">Screenshot 3</div>
+      <figcaption>Bestenlisten</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section>
+  <h2>Verfügbarkeit</h2>
+  <p><strong>Aktuell verfügbar in:</strong> ${availability}</p>
+  <p class="muted">Zuletzt aktualisiert: ${availabilityUpdated}</p>
+</section>
+
+<section>
+  <h2>Links</h2>
+  <ul>
+    <li><a href="/support/">Support</a></li>
+    <li><a href="/privacy/">Datenschutzerklärung</a></li>
+  </ul>
+</section>
+`,
+
+  es: `
+<section>
+  <h2>Acción arcade rápida</h2>
+  <p>
+    ArcBreaker es un juego arcade rápido donde el tiempo y la precisión importan.
+    Rompe bloques, protege la mitad inferior, recoge potenciadores y sube en la clasificación.
+    Está pensado para sesiones cortas y casuales e incluye integración con Game Center para clasificaciones globales y de amigos.
+  </p>
+  <p class="cta-row">
+    <a class="cta" href="${appStoreUrl}" target="_blank" rel="noopener">Ver en App Store</a>
+    <a class="cta secondary" href="/support/">Soporte</a>
+  </p>
+</section>
+
+<section>
+  <h2>Capturas</h2>
+  <p>Guarda tus capturas en <code>/assets</code> y actualiza la lista de abajo.</p>
+  <div class="gallery">
+    <figure>
+      <div class="ph">Captura 1</div>
+      <figcaption>Juego</figcaption>
+    </figure>
+    <figure>
+      <div class="ph">Captura 2</div>
+      <figcaption>Potenciadores</figcaption>
+    </figure>
+    <figure>
+      <div class="ph">Captura 3</div>
+      <figcaption>Clasificaciones</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section>
+  <h2>Disponibilidad</h2>
+  <p><strong>Disponible actualmente en:</strong> ${availability}</p>
+  <p class="muted">Última actualización: ${availabilityUpdated}</p>
+</section>
+
+<section>
+  <h2>Enlaces</h2>
+  <ul>
+    <li><a href="/support/">Soporte</a></li>
+    <li><a href="/privacy/">Política de privacidad</a></li>
+  </ul>
+</section>
+`,
+
+  fr: `
+<section>
+  <h2>Action arcade rapide</h2>
+  <p>
+    ArcBreaker est un jeu d\'arcade rapide où le timing et la précision comptent.
+    Cassez des briques, protégez la moitié inférieure, récupérez des power-ups et grimpez dans le classement.
+    Conçu pour des sessions courtes et casual, avec intégration Game Center pour les classements mondiaux et amis.
+  </p>
+  <p class="cta-row">
+    <a class="cta" href="${appStoreUrl}" target="_blank" rel="noopener">Voir sur l\'App Store</a>
+    <a class="cta secondary" href="/support/">Assistance</a>
+  </p>
+</section>
+
+<section>
+  <h2>Captures d\'écran</h2>
+  <p>Ajoutez vos captures dans <code>/assets</code> puis mettez à jour la liste ci-dessous.</p>
+  <div class="gallery">
+    <figure>
+      <div class="ph">Capture 1</div>
+      <figcaption>Gameplay</figcaption>
+    </figure>
+    <figure>
+      <div class="ph">Capture 2</div>
+      <figcaption>Power-ups</figcaption>
+    </figure>
+    <figure>
+      <div class="ph">Capture 3</div>
+      <figcaption>Classements</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section>
+  <h2>Disponibilité</h2>
+  <p><strong>Disponible actuellement en :</strong> ${availability}</p>
+  <p class="muted">Dernière mise à jour : ${availabilityUpdated}</p>
+</section>
+
+<section>
+  <h2>Liens</h2>
+  <ul>
+    <li><a href="/support/">Assistance</a></li>
+    <li><a href="/privacy/">Politique de confidentialité</a></li>
+  </ul>
+</section>
+`
+};
+
+function detectLang() {
+  const lang = navigator.language.slice(0,2);
+  return texts[lang] ? lang : 'en';
+}
+
+function setLang(lang) {
+  document.getElementById("content").innerHTML = texts[lang];
+  document.documentElement.lang = lang;
+}
+
+setLang(detectLang());
+</script>
+</body>
+</html>

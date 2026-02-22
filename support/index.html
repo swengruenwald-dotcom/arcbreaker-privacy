@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>ArcBreaker: Ringfall Arena – Support</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Support for ArcBreaker: Ringfall Arena." />
+  <link rel="stylesheet" href="/site/style.css" />
+</head>
+
+<body>
+<header>
+  <h1>ArcBreaker: Ringfall Arena</h1>
+  <nav>
+    <a class="navlink" href="/">Home</a>
+    <a class="navlink" href="/support/">Support</a>
+    <a class="navlink" href="/privacy/">Privacy</a>
+  </nav>
+  <nav aria-label="Language">
+    <button onclick="setLang('de')">DE</button>
+    <button onclick="setLang('en')">EN</button>
+    <button onclick="setLang('es')">ES</button>
+    <button onclick="setLang('fr')">FR</button>
+  </nav>
+</header>
+
+<main id="content"></main>
+
+<footer>
+  © 2026 HafenEnte · Swen Grünwald · <a href="mailto:info@hafenente.de">info@hafenente.de</a>
+</footer>
+
+<script>
+const supportEmail = "info@hafenente.de";
+
+function escapeMailBody(s) {
+  return encodeURIComponent((s || "").trim());
+}
+
+function buildMail(lang) {
+  const msg = document.getElementById('support_message').value;
+  const contact = document.getElementById('support_contact').value;
+  const version = document.getElementById('support_version').value;
+  const device = document.getElementById('support_device').value;
+  const ios = document.getElementById('support_ios').value;
+
+  const subjectByLang = {
+    en: "ArcBreaker Support",
+    de: "ArcBreaker Support",
+    es: "Soporte de ArcBreaker",
+    fr: "Assistance ArcBreaker"
+  };
+
+  const subject = subjectByLang[lang] || subjectByLang.en;
+
+  const body = [
+    `Language: ${lang}`,
+    "",
+    "Support message:",
+    msg || "(no message)",
+    "",
+    `Contact email: ${contact || "(not provided)"}`,
+    `App version: ${version || "(not provided)"}`,
+    `Device: ${device || "(not provided)"}`,
+    `iOS version: ${ios || "(not provided)"}`,
+  ].join("\n");
+
+  return `mailto:${supportEmail}?subject=${encodeURIComponent(subject)}&body=${escapeMailBody(body)}`;
+}
+
+function wireUp(lang) {
+  const btn = document.getElementById('sendBtn');
+  btn.onclick = () => {
+    window.location.href = buildMail(lang);
+  };
+}
+
+const texts = {
+  en: `
+<section>
+  <h2>Contact support</h2>
+  <p>
+    Use the form below to contact support. Your email app will open with a pre-filled message.
+    If you prefer, you can also email us directly at <a href="mailto:${supportEmail}">${supportEmail}</a>.
+  </p>
+</section>
+
+<section>
+  <h2>Support form</h2>
+  <form class="form" onsubmit="return false;">
+    <label for="support_message">Support text</label>
+    <textarea id="support_message" rows="6" placeholder="Describe the issue or feedback..."></textarea>
+
+    <label for="support_contact">Your email (optional)</label>
+    <input id="support_contact" type="email" placeholder="name@example.com" />
+
+    <label for="support_version">App version (from Credits, e.g. Version 1.2.3 (45))</label>
+    <input id="support_version" type="text" placeholder="Version ..." />
+
+    <label for="support_device">Device (optional)</label>
+    <input id="support_device" type="text" placeholder="e.g. iPhone 15 Pro" />
+
+    <label for="support_ios">iOS version (optional)</label>
+    <input id="support_ios" type="text" placeholder="e.g. iOS 17.3" />
+
+    <button id="sendBtn" class="cta" type="button">Open email draft</button>
+  </form>
+  <p class="muted">Note: this page does not store your data. The message is created on your device.</p>
+</section>
+`,
+
+  de: `
+<section>
+  <h2>Support kontaktieren</h2>
+  <p>
+    Nutze das Formular unten, um den Support zu kontaktieren. Deine Mail-App öffnet sich mit einer vorbefüllten Nachricht.
+    Alternativ kannst du uns direkt per E-Mail erreichen: <a href="mailto:${supportEmail}">${supportEmail}</a>.
+  </p>
+</section>
+
+<section>
+  <h2>Support-Formular</h2>
+  <form class="form" onsubmit="return false;">
+    <label for="support_message">Support-Text</label>
+    <textarea id="support_message" rows="6" placeholder="Beschreibe das Problem oder dein Feedback..."></textarea>
+
+    <label for="support_contact">Deine E-Mail (optional)</label>
+    <input id="support_contact" type="email" placeholder="name@example.com" />
+
+    <label for="support_version">App-Version (aus Credits, z. B. Version 1.2.3 (45))</label>
+    <input id="support_version" type="text" placeholder="Version ..." />
+
+    <label for="support_device">Gerät (optional)</label>
+    <input id="support_device" type="text" placeholder="z. B. iPhone 15 Pro" />
+
+    <label for="support_ios">iOS-Version (optional)</label>
+    <input id="support_ios" type="text" placeholder="z. B. iOS 17.3" />
+
+    <button id="sendBtn" class="cta" type="button">E-Mail-Entwurf öffnen</button>
+  </form>
+  <p class="muted">Hinweis: Diese Seite speichert keine Daten. Die Nachricht wird auf deinem Gerät erstellt.</p>
+</section>
+`,
+
+  es: `
+<section>
+  <h2>Contactar soporte</h2>
+  <p>
+    Usa el formulario de abajo para contactar con soporte. Se abrirá tu app de correo con un mensaje pre-rellenado.
+    Si lo prefieres, también puedes escribirnos a <a href="mailto:${supportEmail}">${supportEmail}</a>.
+  </p>
+</section>
+
+<section>
+  <h2>Formulario de soporte</h2>
+  <form class="form" onsubmit="return false;">
+    <label for="support_message">Texto de soporte</label>
+    <textarea id="support_message" rows="6" placeholder="Describe el problema o tu comentario..."></textarea>
+
+    <label for="support_contact">Tu correo (opcional)</label>
+    <input id="support_contact" type="email" placeholder="name@example.com" />
+
+    <label for="support_version">Versión de la app (en Créditos, p. ej. Version 1.2.3 (45))</label>
+    <input id="support_version" type="text" placeholder="Version ..." />
+
+    <label for="support_device">Dispositivo (opcional)</label>
+    <input id="support_device" type="text" placeholder="p. ej. iPhone 15 Pro" />
+
+    <label for="support_ios">Versión de iOS (opcional)</label>
+    <input id="support_ios" type="text" placeholder="p. ej. iOS 17.3" />
+
+    <button id="sendBtn" class="cta" type="button">Abrir borrador de email</button>
+  </form>
+  <p class="muted">Nota: esta página no guarda tus datos. El mensaje se crea en tu dispositivo.</p>
+</section>
+`,
+
+  fr: `
+<section>
+  <h2>Contacter l\'assistance</h2>
+  <p>
+    Utilisez le formulaire ci-dessous. Votre application Mail s\'ouvrira avec un message pré-rempli.
+    Vous pouvez aussi nous écrire directement à <a href="mailto:${supportEmail}">${supportEmail}</a>.
+  </p>
+</section>
+
+<section>
+  <h2>Formulaire de support</h2>
+  <form class="form" onsubmit="return false;">
+    <label for="support_message">Texte de support</label>
+    <textarea id="support_message" rows="6" placeholder="Décrivez le problème ou votre retour..."></textarea>
+
+    <label for="support_contact">Votre email (optionnel)</label>
+    <input id="support_contact" type="email" placeholder="name@example.com" />
+
+    <label for="support_version">Version de l\'app (dans Crédits, ex. Version 1.2.3 (45))</label>
+    <input id="support_version" type="text" placeholder="Version ..." />
+
+    <label for="support_device">Appareil (optionnel)</label>
+    <input id="support_device" type="text" placeholder="ex. iPhone 15 Pro" />
+
+    <label for="support_ios">Version iOS (optionnel)</label>
+    <input id="support_ios" type="text" placeholder="ex. iOS 17.3" />
+
+    <button id="sendBtn" class="cta" type="button">Ouvrir le brouillon d\'email</button>
+  </form>
+  <p class="muted">Remarque : cette page ne stocke aucune donnée. Le message est créé sur votre appareil.</p>
+</section>
+`
+};
+
+function detectLang() {
+  const lang = navigator.language.slice(0,2);
+  return texts[lang] ? lang : 'en';
+}
+
+function setLang(lang) {
+  document.getElementById("content").innerHTML = texts[lang];
+  document.documentElement.lang = lang;
+  wireUp(lang);
+}
+
+setLang(detectLang());
+</script>
+</body>
+</html>
