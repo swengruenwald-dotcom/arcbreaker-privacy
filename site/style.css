@@ -16,7 +16,8 @@
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  background: radial-gradient(1000px 700px at 50% 0%, rgba(47, 242, 255, 0.18), rgba(2, 8, 20, 0)),
+  background: url('/assets/ArcBreaker_main_background_2.png') center top / cover no-repeat fixed,
+              radial-gradient(1000px 700px at 50% 0%, rgba(47, 242, 255, 0.18), rgba(2, 8, 20, 0)),
               radial-gradient(900px 700px at 30% 100%, rgba(255, 59, 212, 0.10), rgba(2, 8, 20, 0)),
               radial-gradient(circle at top, #0b1d2b, var(--bg-main));
   color: var(--text-main);
@@ -24,9 +25,9 @@ body {
 }
 
 .top {
-  padding: 18px 18px 10px;
-  background: linear-gradient(180deg, rgba(14, 42, 68, 0.92), rgba(6, 20, 35, 0.85));
-  border-bottom: 1px solid #1f3b5c;
+  padding: 16px 18px 10px;
+  background: linear-gradient(180deg, rgba(2, 8, 20, 0.78), rgba(6, 20, 35, 0.60));
+  border-bottom: 1px solid rgba(31, 59, 92, 0.75);
   position: sticky;
   top: 0;
   backdrop-filter: blur(10px);
@@ -45,14 +46,15 @@ body {
 
 .brand {
   display: flex;
-  gap: 14px;
+  gap: 12px;
   align-items: center;
 }
 
+/* user requested: much smaller icon */
 .appicon {
-  width: 56px;
-  height: 56px;
-  border-radius: 14px;
+  width: 32px;
+  height: 32px;
+  border-radius: 9px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.35);
   border: 1px solid rgba(47, 242, 255, 0.18);
 }
@@ -63,17 +65,17 @@ body {
 
 .title {
   font-weight: 900;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.10em;
   color: rgba(47, 242, 255, 0.95);
   text-shadow: 0 0 28px rgba(47, 242, 255, 0.25);
-  font-size: 22px;
+  font-size: 18px;
 }
 
 .subtitle {
-  margin-top: 4px;
+  margin-top: 3px;
   font-weight: 800;
-  letter-spacing: 0.10em;
-  font-size: 12px;
+  letter-spacing: 0.12em;
+  font-size: 10px;
   color: rgba(255, 155, 47, 0.95);
 }
 
@@ -86,23 +88,22 @@ body {
 
 .lang button {
   background: transparent;
-  border: 1px solid var(--accent);
+  border: 1px solid rgba(58, 110, 165, 0.55);
   color: var(--text-main);
   padding: 7px 10px;
   margin: 0 3px;
-  border-radius: 10px;
+  border-radius: 999px;
   font-size: 0.85rem;
   cursor: pointer;
 }
 
 .lang button:hover {
-  background: var(--accent);
-  color: #02111f;
+  background: rgba(58, 110, 165, 0.45);
 }
 
 .nav {
   display: flex;
-  gap: 14px;
+  gap: 12px;
   flex-wrap: wrap;
   justify-content: flex-end;
 }
@@ -111,10 +112,10 @@ body {
   color: var(--text-main);
   text-decoration: none;
   opacity: 0.9;
-  padding: 6px 10px;
-  border-radius: 10px;
+  padding: 6px 12px;
+  border-radius: 999px;
   border: 1px solid rgba(58, 110, 165, 0.25);
-  background: rgba(2, 8, 20, 0.18);
+  background: rgba(2, 8, 20, 0.22);
 }
 
 .navlink:hover {
@@ -129,11 +130,12 @@ main {
 }
 
 section {
-  background: rgba(14, 42, 68, 0.38);
-  border-radius: 16px;
+  background: rgba(2, 8, 20, 0.55);
+  border-radius: 18px;
   padding: 22px;
   margin-bottom: 18px;
-  border: 1px solid var(--border);
+  border: 1px solid rgba(47, 242, 255, 0.12);
+  box-shadow: 0 18px 60px rgba(0,0,0,0.25);
 }
 
 h2, h3 {
@@ -149,60 +151,151 @@ footer {
   text-align: center;
   padding: 18px;
   font-size: 0.85rem;
-  color: var(--text-muted);
+  color: rgba(155, 182, 211, 0.9);
+  background: rgba(2, 8, 20, 0.35);
+  border-top: 1px solid rgba(47, 242, 255, 0.10);
 }
 
 .hero {
   display: grid;
-  grid-template-columns: 1.4fr 0.9fr;
+  grid-template-columns: 1.25fr 0.85fr;
   gap: 18px;
   align-items: stretch;
+}
+
+.hero-card {
+  border-radius: 18px;
+  border: 1px solid rgba(47, 242, 255, 0.18);
+  background: radial-gradient(900px 280px at 30% 0%, rgba(47, 242, 255, 0.18), rgba(2, 8, 20, 0.0)),
+              rgba(2, 8, 20, 0.18);
+  padding: 18px;
+}
+
+.hero-title {
+  margin-bottom: 10px;
+}
+
+.hero-title-line {
+  font-weight: 950;
+  letter-spacing: 0.12em;
+  font-size: 44px;
+  line-height: 1.0;
+  color: rgba(47, 242, 255, 0.96);
+  text-shadow: 0 0 28px rgba(47, 242, 255, 0.25);
+}
+
+.hero-sub {
+  margin-top: 6px;
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  font-size: 14px;
+  color: rgba(255, 155, 47, 0.95);
 }
 
 .hero-copy {
   font-size: 1.05rem;
   color: rgba(230, 240, 255, 0.92);
+  margin: 0;
+}
+
+.cta-row {
+  margin-top: 14px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.primary {
+  display: inline-flex;
+  gap: 12px;
+  align-items: center;
+  text-decoration: none;
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(47, 242, 255, 0.30);
+  background: linear-gradient(90deg, rgba(47, 242, 255, 0.16), rgba(255, 59, 212, 0.10));
+}
+
+.primary:hover {
+  border-color: rgba(255, 59, 212, 0.35);
+}
+
+.pill {
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(230, 240, 255, 0.95);
+}
+
+.badge {
+  width: 170px;
+  height: auto;
+}
+
+.secondary {
+  text-decoration: none;
+  color: rgba(230, 240, 255, 0.92);
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(58, 110, 165, 0.35);
+  background: rgba(2, 8, 20, 0.20);
+}
+
+.secondary:hover {
+  border-color: rgba(47, 242, 255, 0.25);
 }
 
 .storecard {
   text-decoration: none;
   color: var(--text-main);
   border-radius: 18px;
-  border: 1px solid rgba(47, 242, 255, 0.22);
-  background: radial-gradient(600px 240px at 30% 0%, rgba(47, 242, 255, 0.16), rgba(2, 8, 20, 0.0)),
+  border: 1px solid rgba(47, 242, 255, 0.18);
+  background: radial-gradient(700px 260px at 30% 0%, rgba(47, 242, 255, 0.14), rgba(2, 8, 20, 0.0)),
               rgba(2, 8, 20, 0.18);
-  padding: 18px;
+  padding: 16px;
   display: grid;
-  gap: 12px;
+  gap: 14px;
   align-content: start;
-  justify-items: center;
 }
 
 .storecard:hover {
   border-color: rgba(255, 59, 212, 0.30);
 }
 
+.store-top {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
 .storeicon {
-  width: 96px;
-  height: 96px;
-  border-radius: 24px;
+  width: 82px;
+  height: 82px;
+  border-radius: 22px;
   border: 1px solid rgba(47, 242, 255, 0.20);
   box-shadow: 0 14px 40px rgba(0,0,0,0.35);
 }
 
 .storename {
-  font-weight: 900;
+  font-weight: 950;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  text-align: center;
   color: rgba(47, 242, 255, 0.95);
   text-shadow: 0 0 26px rgba(47, 242, 255, 0.20);
   line-height: 1.15;
 }
 
+.storehint {
+  margin-top: 6px;
+  font-size: 0.92rem;
+  color: rgba(155, 182, 211, 0.95);
+}
+
 .storebadge {
   width: 210px;
   height: auto;
+  justify-self: center;
 }
 
 .gallery.modern {
@@ -227,15 +320,18 @@ figure {
 
 figcaption {
   margin-top: 8px;
-  color: var(--text-muted);
+  color: rgba(155, 182, 211, 0.95);
   font-size: 0.95rem;
 }
 
 .muted {
-  color: var(--text-muted);
+  color: rgba(155, 182, 211, 0.95);
 }
 
-@media (max-width: 840px) {
+@media (max-width: 900px) {
+  body {
+    background-attachment: scroll;
+  }
   .hero {
     grid-template-columns: 1fr;
   }
@@ -248,5 +344,8 @@ figcaption {
   }
   .nav {
     justify-content: center;
+  }
+  .hero-title-line {
+    font-size: 38px;
   }
 }

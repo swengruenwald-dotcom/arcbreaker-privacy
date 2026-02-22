@@ -39,16 +39,39 @@
 
 <main>
   <section class="hero">
-    <div class="hero-copy" id="heroCopy"></div>
+    <div>
+      <div class="hero-card">
+        <div class="hero-title">
+          <div class="hero-title-line">ARC</div>
+          <div class="hero-title-line">BREAKER</div>
+          <div class="hero-sub">RINGFALL ARENA</div>
+        </div>
 
-    <a class="storecard" href="https://apps.apple.com/us/app/arcbreaker-ringfall-arena/id6757078402" target="_blank" rel="noopener">
-      <img class="storeicon" src="/assets/App_icon_2.png" alt="ArcBreaker app icon" />
-      <div class="storename">ArcBreaker Ringfall Arena</div>
+        <p class="hero-copy" id="heroCopy"></p>
+
+        <div class="cta-row">
+          <a class="primary" href="https://apps.apple.com/us/app/arcbreaker-ringfall-arena/id6757078402" target="_blank" rel="noopener">
+            <span class="pill" data-i18n="download_now">Download now</span>
+            <img class="badge" src="/assets/Download_on_the_App_Store_Badge_EE_RGB_wht_00217.svg" alt="Download on the App Store" />
+          </a>
+          <a class="secondary" href="#screens" data-i18n="see_screens">See screenshots</a>
+        </div>
+      </div>
+    </div>
+
+    <a class="storecard" href="https://apps.apple.com/us/app/arcbreaker-ringfall-arena/id6757078402" target="_blank" rel="noopener" aria-label="Open ArcBreaker on the App Store">
+      <div class="store-top">
+        <img class="storeicon" src="/assets/App_icon_2.png" alt="ArcBreaker app icon" />
+        <div class="storemeta">
+          <div class="storename">ArcBreaker Ringfall Arena</div>
+          <div class="storehint" data-i18n="store_hint">Tap to open in the App Store</div>
+        </div>
+      </div>
       <img class="storebadge" src="/assets/Download_on_the_App_Store_Badge_EE_RGB_wht_00217.svg" alt="Download on the App Store" />
     </a>
   </section>
 
-  <section>
+  <section id="screens">
     <h2 data-i18n="shots_title">Screenshots</h2>
     <div class="gallery modern">
       <figure>
@@ -86,7 +109,6 @@
 </footer>
 
 <script>
-const appStoreUrl = "https://apps.apple.com/us/app/arcbreaker-ringfall-arena/id6757078402";
 const availability = "Sweden, Norway, Finland, Philippines";
 const availabilityUpdated = "2026-02-22";
 
@@ -98,6 +120,9 @@ const i18n = {
     nav_home: "Home",
     nav_support: "Support",
     nav_privacy: "Privacy",
+    download_now: "Download now",
+    see_screens: "See screenshots",
+    store_hint: "Tap to open in the App Store",
     hero: "ArcBreaker is a fast arcade game where timing and precision matter. Break bricks, protect the lower half, collect power-ups and climb the leaderboard. It's built for casual, quick sessions and includes Game Center integration for global and friends leaderboards.",
     shots_title: "Screenshots",
     availability_title: "Availability",
@@ -113,6 +138,9 @@ const i18n = {
     nav_home: "Start",
     nav_support: "Support",
     nav_privacy: "Datenschutz",
+    download_now: "Jetzt laden",
+    see_screens: "Screenshots ansehen",
+    store_hint: "Tippen, um den App Store zu öffnen",
     hero: "ArcBreaker ist ein schnelles Arcade-Spiel, bei dem Timing und Präzision zählen. Zerstöre Blöcke, schütze die untere Hälfte, sammle Power-ups und klettere in der Bestenliste. Gebaut für kurze, lockere Sessions – mit Game-Center-Integration für globale und Freunde-Bestenlisten.",
     shots_title: "Screenshots",
     availability_title: "Verfügbarkeit",
@@ -128,6 +156,9 @@ const i18n = {
     nav_home: "Inicio",
     nav_support: "Soporte",
     nav_privacy: "Privacidad",
+    download_now: "Descargar",
+    see_screens: "Ver capturas",
+    store_hint: "Toca para abrir la App Store",
     hero: "ArcBreaker es un juego arcade rápido donde el tiempo y la precisión importan. Rompe bloques, protege la mitad inferior, recoge potenciadores y sube en la clasificación. Está pensado para sesiones cortas y casuales e incluye integración con Game Center para clasificaciones globales y de amigos.",
     shots_title: "Capturas",
     availability_title: "Disponibilidad",
@@ -143,6 +174,9 @@ const i18n = {
     nav_home: "Accueil",
     nav_support: "Assistance",
     nav_privacy: "Confidentialité",
+    download_now: "Télécharger",
+    see_screens: "Voir les captures",
+    store_hint: "Touchez pour ouvrir l’App Store",
     hero: "ArcBreaker est un jeu d'arcade rapide où le timing et la précision comptent. Cassez des briques, protégez la moitié inférieure, récupérez des power-ups et grimpez dans le classement. Conçu pour des sessions courtes et casual, avec intégration Game Center pour les classements mondiaux et amis.",
     shots_title: "Captures d'écran",
     availability_title: "Disponibilité",
