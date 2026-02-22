@@ -9,22 +9,77 @@
 </head>
 
 <body>
-<header>
-  <h1>ArcBreaker: Ringfall Arena</h1>
-  <nav>
-    <a class="navlink" href="/" data-i18n="nav_home">Home</a>
-    <a class="navlink" href="/support/" data-i18n="nav_support">Support</a>
-    <a class="navlink" href="/privacy/" data-i18n="nav_privacy">Privacy</a>
-  </nav>
-  <nav aria-label="Language">
-    <button onclick="setLang('de')">DE</button>
-    <button onclick="setLang('en')">EN</button>
-    <button onclick="setLang('es')">ES</button>
-    <button onclick="setLang('fr')">FR</button>
-  </nav>
+<header class="top">
+  <div class="topbar">
+    <div class="brand">
+      <img class="appicon" src="/assets/App_icon_2.png" alt="ArcBreaker app icon" />
+      <div class="brandtext">
+        <div class="title">ARC</div>
+        <div class="title">BREAKER</div>
+        <div class="subtitle">RINGFALL ARENA</div>
+      </div>
+    </div>
+
+    <div class="top-actions">
+      <div class="lang" aria-label="Language">
+        <button onclick="setLang('de')">DE</button>
+        <button onclick="setLang('en')">EN</button>
+        <button onclick="setLang('es')">ES</button>
+        <button onclick="setLang('fr')">FR</button>
+      </div>
+
+      <nav class="nav">
+        <a class="navlink" href="/" data-i18n="nav_home">Home</a>
+        <a class="navlink" href="/support/" data-i18n="nav_support">Support</a>
+        <a class="navlink" href="/privacy/" data-i18n="nav_privacy">Privacy</a>
+      </nav>
+    </div>
+  </div>
 </header>
 
-<main id="content"></main>
+<main>
+  <section class="hero">
+    <div class="hero-copy" id="heroCopy"></div>
+
+    <a class="storecard" href="https://apps.apple.com/us/app/arcbreaker-ringfall-arena/id6757078402" target="_blank" rel="noopener">
+      <img class="storeicon" src="/assets/App_icon_2.png" alt="ArcBreaker app icon" />
+      <div class="storename">ArcBreaker Ringfall Arena</div>
+      <img class="storebadge" src="/assets/Download_on_the_App_Store_Badge_EE_RGB_wht_00217.svg" alt="Download on the App Store" />
+    </a>
+  </section>
+
+  <section>
+    <h2 data-i18n="shots_title">Screenshots</h2>
+    <div class="gallery modern">
+      <figure>
+        <img class="shot" src="/assets/MakePoints.jpg" alt="ArcBreaker screenshot: Make points" loading="lazy" />
+        <figcaption data-i18n="cap_makepoints">Make points</figcaption>
+      </figure>
+      <figure>
+        <img class="shot" src="/assets/ControlYourHalf.jpg" alt="ArcBreaker screenshot: Control your half" loading="lazy" />
+        <figcaption data-i18n="cap_control">Control your half</figcaption>
+      </figure>
+      <figure>
+        <img class="shot" src="/assets/Powerups.jpg" alt="ArcBreaker screenshot: Use powerups" loading="lazy" />
+        <figcaption data-i18n="cap_powerups">Use power-ups</figcaption>
+      </figure>
+      <figure>
+        <img class="shot" src="/assets/LevelUp.jpg" alt="ArcBreaker screenshot: Level up" loading="lazy" />
+        <figcaption data-i18n="cap_levelup">Level up</figcaption>
+      </figure>
+      <figure>
+        <img class="shot" src="/assets/leaderboards.jpg" alt="ArcBreaker screenshot: Leaderboards" loading="lazy" />
+        <figcaption data-i18n="cap_leaderboards">Leaderboards</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section>
+    <h2 data-i18n="availability_title">Availability</h2>
+    <p><strong data-i18n="availability_label">Currently available in:</strong> <span id="avail"></span></p>
+    <p class="muted"><span data-i18n="updated_label">Last updated:</span> <span id="availUpdated"></span></p>
+  </section>
+</main>
 
 <footer>
   © 2026 HafenEnte · Swen Grünwald
@@ -35,255 +90,94 @@ const appStoreUrl = "https://apps.apple.com/us/app/arcbreaker-ringfall-arena/id6
 const availability = "Sweden, Norway, Finland, Philippines";
 const availabilityUpdated = "2026-02-22";
 
-const navLabels = {
-  en: { nav_home: "Home", nav_support: "Support", nav_privacy: "Privacy" },
-  de: { nav_home: "Start", nav_support: "Support", nav_privacy: "Datenschutz" },
-  es: { nav_home: "Inicio", nav_support: "Soporte", nav_privacy: "Privacidad" },
-  fr: { nav_home: "Accueil", nav_support: "Assistance", nav_privacy: "Confidentialité" },
+document.getElementById('avail').textContent = availability;
+document.getElementById('availUpdated').textContent = availabilityUpdated;
+
+const i18n = {
+  en: {
+    nav_home: "Home",
+    nav_support: "Support",
+    nav_privacy: "Privacy",
+    hero: "ArcBreaker is a fast arcade game where timing and precision matter. Break bricks, protect the lower half, collect power-ups and climb the leaderboard. It's built for casual, quick sessions and includes Game Center integration for global and friends leaderboards.",
+    shots_title: "Screenshots",
+    availability_title: "Availability",
+    availability_label: "Currently available in:",
+    updated_label: "Last updated:",
+    cap_makepoints: "Make points",
+    cap_control: "Control your half",
+    cap_powerups: "Use power-ups",
+    cap_levelup: "Level up",
+    cap_leaderboards: "Leaderboards",
+  },
+  de: {
+    nav_home: "Start",
+    nav_support: "Support",
+    nav_privacy: "Datenschutz",
+    hero: "ArcBreaker ist ein schnelles Arcade-Spiel, bei dem Timing und Präzision zählen. Zerstöre Blöcke, schütze die untere Hälfte, sammle Power-ups und klettere in der Bestenliste. Gebaut für kurze, lockere Sessions – mit Game-Center-Integration für globale und Freunde-Bestenlisten.",
+    shots_title: "Screenshots",
+    availability_title: "Verfügbarkeit",
+    availability_label: "Aktuell verfügbar in:",
+    updated_label: "Zuletzt aktualisiert:",
+    cap_makepoints: "Punkte machen",
+    cap_control: "Kontrolliere deine Hälfte",
+    cap_powerups: "Power-ups nutzen",
+    cap_levelup: "Level up",
+    cap_leaderboards: "Bestenlisten",
+  },
+  es: {
+    nav_home: "Inicio",
+    nav_support: "Soporte",
+    nav_privacy: "Privacidad",
+    hero: "ArcBreaker es un juego arcade rápido donde el tiempo y la precisión importan. Rompe bloques, protege la mitad inferior, recoge potenciadores y sube en la clasificación. Está pensado para sesiones cortas y casuales e incluye integración con Game Center para clasificaciones globales y de amigos.",
+    shots_title: "Capturas",
+    availability_title: "Disponibilidad",
+    availability_label: "Disponible actualmente en:",
+    updated_label: "Última actualización:",
+    cap_makepoints: "Haz puntos",
+    cap_control: "Controla tu mitad",
+    cap_powerups: "Usa potenciadores",
+    cap_levelup: "Sube de nivel",
+    cap_leaderboards: "Clasificaciones",
+  },
+  fr: {
+    nav_home: "Accueil",
+    nav_support: "Assistance",
+    nav_privacy: "Confidentialité",
+    hero: "ArcBreaker est un jeu d'arcade rapide où le timing et la précision comptent. Cassez des briques, protégez la moitié inférieure, récupérez des power-ups et grimpez dans le classement. Conçu pour des sessions courtes et casual, avec intégration Game Center pour les classements mondiaux et amis.",
+    shots_title: "Captures d'écran",
+    availability_title: "Disponibilité",
+    availability_label: "Disponible actuellement en :",
+    updated_label: "Dernière mise à jour :",
+    cap_makepoints: "Marquer des points",
+    cap_control: "Contrôlez votre moitié",
+    cap_powerups: "Utiliser des power-ups",
+    cap_levelup: "Monter de niveau",
+    cap_leaderboards: "Classements",
+  },
 };
-
-const texts = {
-  en: `
-<section>
-  <h2>Fast arcade action</h2>
-  <p>
-    ArcBreaker is a fast arcade game where timing and precision matter.
-    Break bricks, protect the lower half, collect power-ups, and climb the leaderboard.
-    It's built for casual, quick sessions and includes Game Center integration for global and friends leaderboards.
-  </p>
-  <p class="cta-row">
-    <a class="cta" href="${appStoreUrl}" target="_blank" rel="noopener">Get it on the App Store</a>
-    <a class="cta secondary" href="/support/">Support</a>
-  </p>
-</section>
-
-<section>
-  <h2>Screenshots</h2>
-  <div class="gallery">
-    <figure>
-      <img class="shot" src="/assets/MakePoints.jpg" alt="ArcBreaker screenshot: Make points" loading="lazy" />
-      <figcaption>Make points</figcaption>
-    </figure>
-    <figure>
-      <img class="shot" src="/assets/ControlYourHalf.jpg" alt="ArcBreaker screenshot: Control your half" loading="lazy" />
-      <figcaption>Control your half</figcaption>
-    </figure>
-    <figure>
-      <img class="shot" src="/assets/Powerups.jpg" alt="ArcBreaker screenshot: Use powerups" loading="lazy" />
-      <figcaption>Use power-ups</figcaption>
-    </figure>
-    <figure>
-      <img class="shot" src="/assets/LevelUp.jpg" alt="ArcBreaker screenshot: Level up" loading="lazy" />
-      <figcaption>Level up</figcaption>
-    </figure>
-    <figure>
-      <img class="shot" src="/assets/leaderboards.jpg" alt="ArcBreaker screenshot: Leaderboards" loading="lazy" />
-      <figcaption>Leaderboards</figcaption>
-    </figure>
-  </div>
-</section>
-
-<section>
-  <h2>Availability</h2>
-  <p><strong>Currently available in:</strong> ${availability}</p>
-  <p class="muted">Last updated: ${availabilityUpdated}</p>
-</section>
-
-<section>
-  <h2>Links</h2>
-  <ul>
-    <li><a href="/support/">Support</a></li>
-    <li><a href="/privacy/">Privacy policy</a></li>
-  </ul>
-</section>
-`,
-
-  de: `
-<section>
-  <h2>Schnelle Arcade-Action</h2>
-  <p>
-    ArcBreaker ist ein schnelles Arcade-Spiel, bei dem Timing und Präzision zählen.
-    Zerstöre Blöcke, schütze die untere Hälfte, sammle Power-ups und klettere in der Bestenliste.
-    Es ist für kurze, lockere Sessions gebaut und bietet Game-Center-Integration für globale und Freunde-Bestenlisten.
-  </p>
-  <p class="cta-row">
-    <a class="cta" href="${appStoreUrl}" target="_blank" rel="noopener">Im App Store ansehen</a>
-    <a class="cta secondary" href="/support/">Support</a>
-  </p>
-</section>
-
-<section>
-  <h2>Screenshots</h2>
-  <div class="gallery">
-    <figure>
-      <img class="shot" src="/assets/MakePoints.jpg" alt="ArcBreaker Screenshot: Punkte machen" loading="lazy" />
-      <figcaption>Punkte machen</figcaption>
-    </figure>
-    <figure>
-      <img class="shot" src="/assets/ControlYourHalf.jpg" alt="ArcBreaker Screenshot: Kontrolliere deine Hälfte" loading="lazy" />
-      <figcaption>Kontrolliere deine Hälfte</figcaption>
-    </figure>
-    <figure>
-      <img class="shot" src="/assets/Powerups.jpg" alt="ArcBreaker Screenshot: Power-ups nutzen" loading="lazy" />
-      <figcaption>Power-ups nutzen</figcaption>
-    </figure>
-    <figure>
-      <img class="shot" src="/assets/LevelUp.jpg" alt="ArcBreaker Screenshot: Level up" loading="lazy" />
-      <figcaption>Level up</figcaption>
-    </figure>
-    <figure>
-      <img class="shot" src="/assets/leaderboards.jpg" alt="ArcBreaker Screenshot: Bestenlisten" loading="lazy" />
-      <figcaption>Bestenlisten</figcaption>
-    </figure>
-  </div>
-</section>
-
-<section>
-  <h2>Verfügbarkeit</h2>
-  <p><strong>Aktuell verfügbar in:</strong> ${availability}</p>
-  <p class="muted">Zuletzt aktualisiert: ${availabilityUpdated}</p>
-</section>
-
-<section>
-  <h2>Links</h2>
-  <ul>
-    <li><a href="/support/">Support</a></li>
-    <li><a href="/privacy/">Datenschutzerklärung</a></li>
-  </ul>
-</section>
-`,
-
-  es: `
-<section>
-  <h2>Acción arcade rápida</h2>
-  <p>
-    ArcBreaker es un juego arcade rápido donde el tiempo y la precisión importan.
-    Rompe bloques, protege la mitad inferior, recoge potenciadores y sube en la clasificación.
-    Está pensado para sesiones cortas y casuales e incluye integración con Game Center para clasificaciones globales y de amigos.
-  </p>
-  <p class="cta-row">
-    <a class="cta" href="${appStoreUrl}" target="_blank" rel="noopener">Ver en App Store</a>
-    <a class="cta secondary" href="/support/">Soporte</a>
-  </p>
-</section>
-
-<section>
-  <h2>Capturas</h2>
-  <div class="gallery">
-    <figure>
-      <img class="shot" src="/assets/MakePoints.jpg" alt="Captura de ArcBreaker: Haz puntos" loading="lazy" />
-      <figcaption>Haz puntos</figcaption>
-    </figure>
-    <figure>
-      <img class="shot" src="/assets/ControlYourHalf.jpg" alt="Captura de ArcBreaker: Controla tu mitad" loading="lazy" />
-      <figcaption>Controla tu mitad</figcaption>
-    </figure>
-    <figure>
-      <img class="shot" src="/assets/Powerups.jpg" alt="Captura de ArcBreaker: Usa potenciadores" loading="lazy" />
-      <figcaption>Usa potenciadores</figcaption>
-    </figure>
-    <figure>
-      <img class="shot" src="/assets/LevelUp.jpg" alt="Captura de ArcBreaker: Sube de nivel" loading="lazy" />
-      <figcaption>Sube de nivel</figcaption>
-    </figure>
-    <figure>
-      <img class="shot" src="/assets/leaderboards.jpg" alt="Captura de ArcBreaker: Clasificaciones" loading="lazy" />
-      <figcaption>Clasificaciones</figcaption>
-    </figure>
-  </div>
-</section>
-
-<section>
-  <h2>Disponibilidad</h2>
-  <p><strong>Disponible actualmente en:</strong> ${availability}</p>
-  <p class="muted">Última actualización: ${availabilityUpdated}</p>
-</section>
-
-<section>
-  <h2>Enlaces</h2>
-  <ul>
-    <li><a href="/support/">Soporte</a></li>
-    <li><a href="/privacy/">Política de privacidad</a></li>
-  </ul>
-</section>
-`,
-
-  fr: `
-<section>
-  <h2>Action arcade rapide</h2>
-  <p>
-    ArcBreaker est un jeu d'arcade rapide où le timing et la précision comptent.
-    Cassez des briques, protégez la moitié inférieure, récupérez des power-ups et grimpez dans le classement.
-    Conçu pour des sessions courtes et casual, avec intégration Game Center pour les classements mondiaux et amis.
-  </p>
-  <p class="cta-row">
-    <a class="cta" href="${appStoreUrl}" target="_blank" rel="noopener">Voir sur l'App Store</a>
-    <a class="cta secondary" href="/support/">Assistance</a>
-  </p>
-</section>
-
-<section>
-  <h2>Captures d'écran</h2>
-  <div class="gallery">
-    <figure>
-      <img class="shot" src="/assets/MakePoints.jpg" alt="Capture ArcBreaker : Marquer des points" loading="lazy" />
-      <figcaption>Marquer des points</figcaption>
-    </figure>
-    <figure>
-      <img class="shot" src="/assets/ControlYourHalf.jpg" alt="Capture ArcBreaker : Contrôlez votre moitié" loading="lazy" />
-      <figcaption>Contrôlez votre moitié</figcaption>
-    </figure>
-    <figure>
-      <img class="shot" src="/assets/Powerups.jpg" alt="Capture ArcBreaker : Utiliser des power-ups" loading="lazy" />
-      <figcaption>Utiliser des power-ups</figcaption>
-    </figure>
-    <figure>
-      <img class="shot" src="/assets/LevelUp.jpg" alt="Capture ArcBreaker : Monter de niveau" loading="lazy" />
-      <figcaption>Monter de niveau</figcaption>
-    </figure>
-    <figure>
-      <img class="shot" src="/assets/leaderboards.jpg" alt="Capture ArcBreaker : Classements" loading="lazy" />
-      <figcaption>Classements</figcaption>
-    </figure>
-  </div>
-</section>
-
-<section>
-  <h2>Disponibilité</h2>
-  <p><strong>Disponible actuellement en :</strong> ${availability}</p>
-  <p class="muted">Dernière mise à jour : ${availabilityUpdated}</p>
-</section>
-
-<section>
-  <h2>Liens</h2>
-  <ul>
-    <li><a href="/support/">Assistance</a></li>
-    <li><a href="/privacy/">Politique de confidentialité</a></li>
-  </ul>
-</section>
-`
-};
-
-function applyNav(lang) {
-  const labels = navLabels[lang] || navLabels.en;
-  document.querySelectorAll('[data-i18n]').forEach(el => {
-    const key = el.getAttribute('data-i18n');
-    if (labels[key]) el.textContent = labels[key];
-  });
-}
 
 function detectLang() {
   const lang = navigator.language.slice(0,2);
-  return texts[lang] ? lang : 'en';
+  return i18n[lang] ? lang : 'en';
+}
+
+function applyI18n(lang) {
+  const dict = i18n[lang] || i18n.en;
+  document.documentElement.lang = lang;
+
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (dict[key]) el.textContent = dict[key];
+  });
+
+  document.getElementById('heroCopy').textContent = dict.hero;
 }
 
 function setLang(lang) {
-  document.getElementById("content").innerHTML = texts[lang];
-  document.documentElement.lang = lang;
-  applyNav(lang);
+  applyI18n(lang);
 }
 
-setLang(detectLang());
+applyI18n(detectLang());
 </script>
 </body>
 </html>
