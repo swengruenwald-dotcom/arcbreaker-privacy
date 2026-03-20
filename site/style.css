@@ -24,10 +24,10 @@ body {
   line-height: 1.6;
 }
 
-/* Top bar / header */
+/* ─── Header ─────────────────────────────────────── */
 
 .top {
-  padding: 16px 18px 10px;
+  padding: 12px 18px;
   background: linear-gradient(180deg, rgba(2, 8, 20, 0.78), rgba(6, 20, 35, 0.60));
   border-bottom: 1px solid rgba(31, 59, 92, 0.75);
   position: sticky;
@@ -37,7 +37,7 @@ body {
   z-index: 10;
 }
 
-/* 3-column grid: brand | badge | lang+tabs */
+/* Default (desktop/laptop): logo | badge | lang+tabs */
 
 .topbar {
   max-width: 1100px;
@@ -52,6 +52,7 @@ body {
   display: flex;
   gap: 12px;
   align-items: center;
+  text-decoration: none;
 }
 
 .appicon {
@@ -85,21 +86,22 @@ body {
 /* Center: App Store badge */
 
 .header-store-link {
-  display: inline-flex;
+  display: flex;
   justify-content: center;
   text-decoration: none;
 }
 
 .header-badge {
-  width: 160px;
+  width: 150px;
   height: auto;
   display: block;
 }
 
-/* Right: language + nav */
+/* Right: languages + nav tabs */
 
 .nav-group {
   display: flex;
+  flex-direction: row;
   gap: 10px;
   align-items: center;
   justify-content: flex-end;
@@ -107,16 +109,16 @@ body {
 
 .lang {
   display: inline-flex;
-  gap: 6px;
+  gap: 4px;
 }
 
 .lang button {
   background: transparent;
   border: 1px solid rgba(58, 110, 165, 0.55);
   color: var(--text-main);
-  padding: 7px 10px;
+  padding: 6px 9px;
   border-radius: 999px;
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   cursor: pointer;
 }
 
@@ -126,7 +128,7 @@ body {
 
 .nav {
   display: flex;
-  gap: 10px;
+  gap: 8px;
   flex-wrap: nowrap;
   align-items: center;
 }
@@ -135,10 +137,12 @@ body {
   color: var(--text-main);
   text-decoration: none;
   opacity: 0.9;
-  padding: 6px 14px;
+  padding: 6px 12px;
   border-radius: 999px;
   border: 1px solid rgba(58, 110, 165, 0.25);
   background: rgba(2, 8, 20, 0.22);
+  font-size: 0.9rem;
+  white-space: nowrap;
 }
 
 .navlink:hover {
@@ -146,7 +150,7 @@ body {
   border-color: rgba(47, 242, 255, 0.30);
 }
 
-/* Main layout */
+/* ─── Main layout ─────────────────────────────────── */
 
 main {
   max-width: 1100px;
@@ -181,7 +185,7 @@ footer {
   border-top: 1px solid rgba(47, 242, 255, 0.10);
 }
 
-/* Hero + tiles (home) */
+/* ─── Hero ────────────────────────────────────────── */
 
 .hero {
   display: grid;
@@ -260,7 +264,7 @@ footer {
   height: auto;
 }
 
-/* Right tile poster */
+/* ─── Poster tile ─────────────────────────────────── */
 
 .storecard {
   border-radius: 18px;
@@ -288,40 +292,7 @@ footer {
   box-shadow: 0 14px 40px rgba(0,0,0,0.28);
 }
 
-/* Availability chips (unused but kept) */
-
-.availability-card {
-  border-radius: 14px;
-  border: 1px solid rgba(47, 242, 255, 0.14);
-  background: rgba(2, 8, 20, 0.25);
-  padding: 14px;
-}
-
-.avail-title {
-  font-weight: 950;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: rgba(230, 240, 255, 0.92);
-}
-
-.avail-list {
-  margin-top: 10px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.chip {
-  padding: 6px 10px;
-  border-radius: 999px;
-  border: 1px solid rgba(58, 110, 165, 0.35);
-  background: rgba(2, 8, 20, 0.30);
-  color: rgba(230, 240, 255, 0.92);
-  font-weight: 700;
-  font-size: 0.92rem;
-}
-
-/* Screenshots */
+/* ─── Screenshots ─────────────────────────────────── */
 
 .gallery.modern {
   display: grid;
@@ -349,7 +320,7 @@ figcaption {
   font-size: 0.95rem;
 }
 
-/* Forms (support/privacy) */
+/* ─── Forms ───────────────────────────────────────── */
 
 .muted {
   color: rgba(155, 182, 211, 0.95);
@@ -392,27 +363,10 @@ textarea::placeholder {
   border: 1px solid rgba(47, 242, 255, 0.35);
 }
 
-/* Responsive: phones, portrait */
+/* ─── Responsive: mobile PORTRAIT ────────────────── */
+/* Stack everything vertically, center aligned        */
 
-@media (max-width: 600px) {
-  main {
-    max-width: 420px;
-    margin: 0 auto;
-    padding: 18px 14px 24px;
-  }
-
-  section {
-    margin-bottom: 16px;
-  }
-
-  .hero {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* Responsive: general mobile up to 900px */
-
-@media (max-width: 900px) {
+@media (max-width: 900px) and (orientation: portrait) {
   body {
     background-attachment: scroll;
   }
@@ -421,23 +375,76 @@ textarea::placeholder {
     grid-template-columns: 1fr;
   }
 
-  /* Stack header vertically on very small widths */
   .topbar {
-    grid-template-columns: auto;
+    grid-template-columns: 1fr;
     row-gap: 10px;
     justify-items: center;
   }
 
-  .nav-group {
-    flex-direction: column;
-    align-items: center;
+  .header-store-link {
+    justify-content: center;
   }
 
   .header-badge {
     width: 140px;
   }
 
+  .nav-group {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .nav {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
   .hero-title-line {
     font-size: 38px;
+  }
+}
+
+/* ─── Responsive: mobile LANDSCAPE ───────────────── */
+/* Keep 3-column header row, compact sizing           */
+
+@media (max-width: 900px) and (orientation: landscape) {
+  body {
+    background-attachment: scroll;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .topbar {
+    grid-template-columns: auto 1fr auto;
+    column-gap: 12px;
+    align-items: center;
+  }
+
+  .header-badge {
+    width: 120px;
+  }
+
+  .nav-group {
+    flex-direction: row;
+    gap: 6px;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .lang button {
+    padding: 5px 7px;
+    font-size: 0.78rem;
+  }
+
+  .navlink {
+    padding: 5px 9px;
+    font-size: 0.82rem;
+  }
+
+  .hero-title-line {
+    font-size: 32px;
   }
 }
