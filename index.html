@@ -20,7 +20,11 @@
       </div>
     </div>
 
-    <div class="top-actions">
+    <a class="header-store-link" href="https://apps.apple.com/us/app/arcbreaker-ringfall-arena/id6757078402" target="_blank" rel="noopener" aria-label="Download ArcBreaker on the App Store">
+      <img class="header-badge" src="/assets/Download_on_the_App_Store_Badge_US.svg" alt="Download on the App Store" />
+    </a>
+
+    <div class="nav-group">
       <div class="lang" aria-label="Language">
         <button onclick="setLang('de')">DE</button>
         <button onclick="setLang('en')">EN</button>
@@ -28,16 +32,12 @@
         <button onclick="setLang('fr')">FR</button>
       </div>
 
-      <a class="header-store-link" href="https://apps.apple.com/us/app/arcbreaker-ringfall-arena/id6757078402" target="_blank" rel="noopener" aria-label="Download ArcBreaker on the App Store">
-        <img class="header-badge" src="/assets/Download_on_the_App_Store_Badge_US.svg" alt="Download on the App Store" />
-      </a>
+      <nav class="nav">
+        <a class="navlink" href="/" data-i18n="nav_home">Home</a>
+        <a class="navlink" href="/support/" data-i18n="nav_support">Support</a>
+        <a class="navlink" href="/privacy/" data-i18n="nav_privacy">Privacy</a>
+      </nav>
     </div>
-
-    <nav class="nav">
-      <a class="navlink" href="/" data-i18n="nav_home">Home</a>
-      <a class="navlink" href="/support/" data-i18n="nav_support">Support</a>
-      <a class="navlink" href="/privacy/" data-i18n="nav_privacy">Privacy</a>
-    </nav>
   </div>
 </header>
 
@@ -163,12 +163,12 @@ function applyI18n(lang) {
   const dict = i18n[lang] || i18n.en;
   document.documentElement.lang = lang;
 
-  document.querySelectorAll('[data-i18n]').forEach(el => {
-    const key = el.getAttribute('data-i18n');
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+    const key = el.getAttribute("data-i18n");
     if (dict[key]) el.textContent = dict[key];
   });
 
-  document.getElementById('heroCopy').textContent = dict.hero;
+  document.getElementById("heroCopy").textContent = dict.hero;
 }
 
 function setLang(lang) {
