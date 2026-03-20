@@ -366,4 +366,199 @@ footer {
 
 .gallery.modern {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px,
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 14px;
+}
+
+figure {
+  margin: 0;
+}
+
+.shot {
+  width: 100%;
+  max-width: 260px;
+  margin: 0 auto;
+  aspect-ratio: 9 / 16;
+  object-fit: cover;
+  border-radius: 14px;
+  border: 1px solid rgba(47, 242, 255, 0.20);
+  background: rgba(2, 8, 20, 0.35);
+}
+
+figcaption {
+  margin-top: 8px;
+  color: rgba(155, 182, 211, 0.95);
+  font-size: 0.95rem;
+}
+
+/* ─── Forms (support/privacy) ─────────────────────── */
+
+.muted {
+  color: rgba(155, 182, 211, 0.95);
+}
+
+.form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 14px;
+  align-items: center;
+}
+
+.form textarea {
+  grid-column: 1 / -1;
+}
+
+.form button.cta {
+  grid-column: 1 / -1;
+  justify-self: flex-start;
+}
+
+label {
+  font-weight: 600;
+  color: rgba(230, 240, 255, 0.9);
+}
+
+input,
+textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(58, 110, 165, 0.35);
+  background: rgba(2, 8, 20, 0.35);
+  color: var(--text-main);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: rgba(155, 182, 211, 0.75);
+}
+
+.cta {
+  display: inline-block;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(47, 242, 255, 0.95);
+  color: rgba(2, 8, 20, 0.92);
+  text-decoration: none;
+  font-weight: 800;
+  border: 1px solid rgba(47, 242, 255, 0.35);
+}
+
+/* ─── Responsive: phones, portrait ────────────────── */
+
+@media (max-width: 600px) {
+  main {
+    max-width: 420px;
+    margin: 0 auto;
+    padding: 18px 14px 24px;
+  }
+
+  section {
+    margin-bottom: 16px;
+  }
+
+  .shot {
+    max-width: 100%;
+  }
+}
+
+/* ─── Responsive: support form stacking ───────────── */
+
+@media (max-width: 700px) {
+  .form {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ─── Responsive: mobile PORTRAIT ────────────────── */
+
+@media (max-width: 900px) and (orientation: portrait) {
+  body {
+    background-attachment: scroll;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .topbar {
+    grid-template-columns: 1fr;
+    row-gap: 10px;
+    justify-items: center;
+  }
+
+  .header-store-link {
+    justify-content: center;
+  }
+
+  .header-badge {
+    width: 140px;
+  }
+
+  .nav-group {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .nav {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .reviews-strip {
+    min-height: 140px;
+  }
+
+  .hero-title-line {
+    font-size: 38px;
+  }
+}
+
+/* ─── Responsive: mobile LANDSCAPE ───────────────── */
+
+@media (max-width: 900px) and (orientation: landscape) {
+  body {
+    background-attachment: scroll;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .topbar {
+    grid-template-columns: auto 1fr auto;
+    column-gap: 12px;
+    align-items: center;
+  }
+
+  .header-badge {
+    width: 120px;
+  }
+
+  .nav-group {
+    flex-direction: row;
+    gap: 6px;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .lang button {
+    padding: 5px 7px;
+    font-size: 0.78rem;
+  }
+
+  .navlink {
+    padding: 5px 9px;
+    font-size: 0.82rem;
+  }
+
+  .reviews-strip {
+    min-height: 120px;
+  }
+
+  .hero-title-line {
+    font-size: 32px;
+  }
+}
