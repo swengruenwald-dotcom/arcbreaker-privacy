@@ -264,6 +264,76 @@ footer {
   height: auto;
 }
 
+/* ─── Review card strip ───────────────────────────── */
+
+.reviews-strip {
+  margin-top: 16px;
+  position: relative;
+  min-height: 120px;
+  overflow: hidden;
+}
+
+.review-card {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transform: translateY(10px) scale(0.99);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+  padding: 14px 16px;
+  border-radius: 16px;
+  border: 1px solid rgba(47, 242, 255, 0.35);
+  background: radial-gradient(800px 300px at 0% 0%,
+              rgba(47, 242, 255, 0.22), rgba(2, 8, 20, 0.96));
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.55);
+}
+
+.review-card.active {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.review-stars {
+  font-size: 1.0rem;
+  letter-spacing: 0.12em;
+  color: #ffcf3a;
+  margin-bottom: 6px;
+}
+
+.review-text {
+  margin: 0 0 3px 0;
+  font-size: 0.92rem;
+  color: rgba(230, 240, 255, 0.98);
+}
+
+.review-text-en {
+  margin: 0 0 8px 0;
+  font-size: 0.78rem;
+  color: rgba(155, 182, 211, 0.95);
+}
+
+.review-footer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 2px;
+}
+
+.review-avatar {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 20%,
+              #2ff2ff, #ff3bd4);
+  box-shadow: 0 0 16px rgba(47, 242, 255, 0.5);
+}
+
+.review-name {
+  font-weight: 700;
+  font-size: 0.86rem;
+  letter-spacing: 0.03em;
+  color: rgba(230, 240, 255, 0.96);
+}
+
 /* ─── Poster tile ─────────────────────────────────── */
 
 .storecard {
@@ -296,155 +366,4 @@ footer {
 
 .gallery.modern {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 14px;
-}
-
-figure {
-  margin: 0;
-}
-
-.shot {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 9 / 16;
-  object-fit: contain;
-  border-radius: 14px;
-  border: 1px solid rgba(47, 242, 255, 0.20);
-  background: rgba(2, 8, 20, 0.35);
-}
-
-figcaption {
-  margin-top: 8px;
-  color: rgba(155, 182, 211, 0.95);
-  font-size: 0.95rem;
-}
-
-/* ─── Forms ───────────────────────────────────────── */
-
-.muted {
-  color: rgba(155, 182, 211, 0.95);
-}
-
-.form {
-  display: grid;
-  gap: 10px;
-}
-
-label {
-  font-weight: 600;
-  color: rgba(230, 240, 255, 0.9);
-}
-
-input,
-textarea {
-  width: 100%;
-  box-sizing: border-box;
-  padding: 10px 12px;
-  border-radius: 12px;
-  border: 1px solid rgba(58, 110, 165, 0.35);
-  background: rgba(2, 8, 20, 0.35);
-  color: var(--text-main);
-}
-
-input::placeholder,
-textarea::placeholder {
-  color: rgba(155, 182, 211, 0.75);
-}
-
-.cta {
-  display: inline-block;
-  padding: 10px 14px;
-  border-radius: 999px;
-  background: rgba(47, 242, 255, 0.95);
-  color: rgba(2, 8, 20, 0.92);
-  text-decoration: none;
-  font-weight: 800;
-  border: 1px solid rgba(47, 242, 255, 0.35);
-}
-
-/* ─── Responsive: mobile PORTRAIT ────────────────── */
-/* Stack everything vertically, center aligned        */
-
-@media (max-width: 900px) and (orientation: portrait) {
-  body {
-    background-attachment: scroll;
-  }
-
-  .hero {
-    grid-template-columns: 1fr;
-  }
-
-  .topbar {
-    grid-template-columns: 1fr;
-    row-gap: 10px;
-    justify-items: center;
-  }
-
-  .header-store-link {
-    justify-content: center;
-  }
-
-  .header-badge {
-    width: 140px;
-  }
-
-  .nav-group {
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-  }
-
-  .nav {
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  .hero-title-line {
-    font-size: 38px;
-  }
-}
-
-/* ─── Responsive: mobile LANDSCAPE ───────────────── */
-/* Keep 3-column header row, compact sizing           */
-
-@media (max-width: 900px) and (orientation: landscape) {
-  body {
-    background-attachment: scroll;
-  }
-
-  .hero {
-    grid-template-columns: 1fr;
-  }
-
-  .topbar {
-    grid-template-columns: auto 1fr auto;
-    column-gap: 12px;
-    align-items: center;
-  }
-
-  .header-badge {
-    width: 120px;
-  }
-
-  .nav-group {
-    flex-direction: row;
-    gap: 6px;
-    align-items: center;
-    justify-content: flex-end;
-  }
-
-  .lang button {
-    padding: 5px 7px;
-    font-size: 0.78rem;
-  }
-
-  .navlink {
-    padding: 5px 9px;
-    font-size: 0.82rem;
-  }
-
-  .hero-title-line {
-    font-size: 32px;
-  }
-}
+  grid-template-columns: repeat(auto-fit, minmax(240px,
