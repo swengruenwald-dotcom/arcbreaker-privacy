@@ -9,7 +9,6 @@
   --gold: #ffcf3a;
 }
 
-/* ─── Base ───────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; }
 
 body {
@@ -49,16 +48,10 @@ figure { margin: 0; }
   column-gap: 18px;
 }
 
-.brand {
-  display: flex;
-  gap: 12px;
-  align-items: center;
-  text-decoration: none;
-}
+.brand { display: flex; gap: 12px; align-items: center; text-decoration: none; }
 
 .appicon {
-  width: 32px;
-  height: 32px;
+  width: 32px; height: 32px;
   border-radius: 9px;
   border: 1px solid rgba(47,242,255,0.18);
   box-shadow: 0 10px 30px rgba(0,0,0,0.35);
@@ -67,35 +60,22 @@ figure { margin: 0; }
 .brandtext { line-height: 1.05; }
 
 .title {
-  font-weight: 900;
-  letter-spacing: 0.10em;
-  font-size: 18px;
+  font-weight: 900; letter-spacing: 0.10em; font-size: 18px;
   color: rgba(47,242,255,0.95);
   text-shadow: 0 0 28px rgba(47,242,255,0.25);
 }
 
 .subtitle {
-  margin-top: 3px;
-  font-weight: 800;
-  letter-spacing: 0.12em;
-  font-size: 10px;
-  color: rgba(255,155,47,0.95);
+  margin-top: 3px; font-weight: 800; letter-spacing: 0.12em;
+  font-size: 10px; color: rgba(255,155,47,0.95);
 }
 
-.header-store-link {
-  display: flex;
-  justify-content: center;
-  text-decoration: none;
-}
-
+.header-store-link { display: flex; justify-content: center; text-decoration: none; }
 .header-badge { width: 150px; height: auto; display: block; }
 
 .nav-group {
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
-  align-items: center;
-  justify-content: flex-end;
+  display: flex; flex-direction: row;
+  gap: 10px; align-items: center; justify-content: flex-end;
 }
 
 .lang { display: inline-flex; gap: 4px; }
@@ -104,25 +84,20 @@ figure { margin: 0; }
   background: transparent;
   border: 1px solid rgba(58,110,165,0.55);
   color: var(--text-main);
-  padding: 6px 9px;
-  border-radius: 999px;
-  font-size: 0.82rem;
-  cursor: pointer;
+  padding: 6px 9px; border-radius: 999px;
+  font-size: 0.82rem; cursor: pointer;
 }
 .lang button:hover { background: rgba(58,110,165,0.45); }
 
 .nav { display: flex; gap: 8px; align-items: center; }
 
 .navlink {
-  color: var(--text-main);
-  text-decoration: none;
-  opacity: 0.9;
-  padding: 6px 12px;
+  color: var(--text-main); text-decoration: none;
+  opacity: 0.9; padding: 6px 12px;
   border-radius: 999px;
   border: 1px solid rgba(58,110,165,0.25);
   background: rgba(2,8,20,0.22);
-  font-size: 0.9rem;
-  white-space: nowrap;
+  font-size: 0.9rem; white-space: nowrap;
 }
 .navlink:hover { opacity: 1; border-color: rgba(47,242,255,0.30); }
 
@@ -142,11 +117,11 @@ section {
   box-shadow: 0 18px 60px rgba(0,0,0,0.25);
 }
 
-/* ─── Hero layout ────────────────────────────────────── */
-
+/* ─── Hero section ───────────────────────────────────── */
 /*
-  hero-section is NOT a plain <section> — it shares the rounded panel look
-  but uses a 2-column grid. Both columns stretch to the same height.
+  2-column grid. align-items: end so both columns share the same
+  bottom edge. The left column (hero card + reviews) sizes by content.
+  The right column (poster) is capped at the same height.
 */
 .hero-section {
   background: rgba(2,8,20,0.55);
@@ -159,17 +134,15 @@ section {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
   gap: 18px;
-  align-items: stretch;   /* ← key: both columns fill identical height */
+  align-items: end;     /* bottom edges align */
 }
 
-/* Left column: hero card on top, reviews below */
 .hero-left {
   display: flex;
   flex-direction: column;
   gap: 14px;
 }
 
-/* Glassmorphism card for title + copy + CTA */
 .hero-card {
   border-radius: 16px;
   border: 1px solid rgba(47,242,255,0.18);
@@ -181,42 +154,25 @@ section {
 .hero-title { margin-bottom: 10px; }
 
 .hero-title-line {
-  font-weight: 950;
-  letter-spacing: 0.12em;
-  font-size: 44px;
-  line-height: 1.0;
+  font-weight: 950; letter-spacing: 0.12em;
+  font-size: 44px; line-height: 1.0;
   color: rgba(47,242,255,0.96);
   text-shadow: 0 0 28px rgba(47,242,255,0.25);
 }
 
 .hero-sub {
-  margin-top: 6px;
-  font-weight: 900;
-  letter-spacing: 0.18em;
-  font-size: 14px;
+  margin-top: 6px; font-weight: 900;
+  letter-spacing: 0.18em; font-size: 14px;
   color: rgba(255,155,47,0.95);
 }
 
-.hero-copy {
-  font-size: 1.0rem;
-  color: rgba(230,240,255,0.92);
-  margin: 0;
-}
+.hero-copy { font-size: 1.0rem; color: rgba(230,240,255,0.92); margin: 0; }
 
-.cta-row {
-  margin-top: 14px;
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  align-items: center;
-}
+.cta-row { margin-top: 14px; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
 
 .primary {
-  display: inline-flex;
-  gap: 12px;
-  align-items: center;
-  text-decoration: none;
-  padding: 10px 14px;
+  display: inline-flex; gap: 12px; align-items: center;
+  text-decoration: none; padding: 10px 14px;
   border-radius: 999px;
   border: 1px solid rgba(47,242,255,0.30);
   background: linear-gradient(90deg, rgba(47,242,255,0.16), rgba(255,59,212,0.10));
@@ -224,125 +180,93 @@ section {
 .primary:hover { border-color: rgba(255,59,212,0.35); }
 
 .pill {
-  font-weight: 900;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: rgba(230,240,255,0.95);
+  font-weight: 900; letter-spacing: 0.06em;
+  text-transform: uppercase; color: rgba(230,240,255,0.95);
 }
 
 .badge { width: 170px; height: auto; }
 
 /* ─── Reviews strip ──────────────────────────────────── */
-
 /*
-  On desktop: flex column showing 2 cards simultaneously.
-  flex: 1 makes this strip grow to fill whatever height is left
-  after the hero-card, so together they match the poster height.
+  On desktop: flex column, cards size to their content, no stretching.
+  Hidden cards take no space (display:none toggled by JS class).
+  On mobile: same — block flow, natural height, no absolute stacking.
 */
 .reviews-strip {
-  flex: 1;                    /* fill remaining left-column height */
   display: flex;
   flex-direction: column;
   gap: 10px;
-  overflow: hidden;
-  position: relative;         /* needed for mobile absolute stacking */
 }
 
+/* all cards hidden by default */
 .review-card {
+  display: none;
   border-radius: 16px;
   border: 1px solid rgba(47,242,255,0.35);
   background: radial-gradient(800px 300px at 0% 0%,
               rgba(47,242,255,0.22), rgba(2,8,20,0.96));
   box-shadow: 0 14px 40px rgba(0,0,0,0.55);
   padding: 14px 16px;
-  flex: 1;                    /* each card shares equal height */
-
-  /* hidden by default; JS adds .active */
-  opacity: 0;
-  transform: translateY(6px) scale(0.99);
-  transition: opacity 0.35s ease, transform 0.35s ease;
-
-  /* desktop: rendered in flow so height works */
-  position: relative;
+  /* NO height forcing — size to content */
+  animation: fadeSlideIn 0.35s ease;
 }
 
+/* visible card */
 .review-card.active {
-  opacity: 1;
-  transform: translateY(0) scale(1);
+  display: block;
+}
+
+@keyframes fadeSlideIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 .review-stars {
-  font-size: 1.0rem;
-  letter-spacing: 0.10em;
-  color: var(--gold);
-  margin-bottom: 6px;
+  font-size: 1.0rem; letter-spacing: 0.10em;
+  color: var(--gold); margin-bottom: 6px;
 }
 
-.review-text {
-  margin: 0 0 3px 0;
-  font-size: 0.90rem;
-  color: rgba(230,240,255,0.98);
-}
+.review-text { margin: 0 0 3px 0; font-size: 0.90rem; color: rgba(230,240,255,0.98); }
 
 .review-text-en {
-  margin: 0 0 8px 0;
-  font-size: 0.76rem;
+  margin: 0 0 8px 0; font-size: 0.76rem;
   color: rgba(155,182,211,0.95);
 }
 
-.review-footer {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-top: 4px;
-}
+.review-footer { display: flex; align-items: center; gap: 8px; margin-top: 4px; }
 
 .review-avatar {
-  width: 26px;
-  height: 26px;
-  border-radius: 50%;
+  width: 26px; height: 26px; border-radius: 50%; flex-shrink: 0;
   background: radial-gradient(circle at 30% 20%, #2ff2ff, #ff3bd4);
   box-shadow: 0 0 16px rgba(47,242,255,0.5);
-  flex-shrink: 0;
 }
 
 .review-meta { display: flex; flex-direction: column; gap: 1px; }
 
-.review-name {
-  font-weight: 700;
-  font-size: 0.86rem;
-  letter-spacing: 0.03em;
-  color: rgba(230,240,255,0.96);
-}
-
-.review-date {
-  font-size: 0.76rem;
-  color: rgba(155,182,211,0.90);
-}
+.review-name { font-weight: 700; font-size: 0.86rem; letter-spacing: 0.03em; color: rgba(230,240,255,0.96); }
+.review-date { font-size: 0.76rem; color: rgba(155,182,211,0.90); }
 
 /* ─── Hero right — poster ────────────────────────────── */
-
 .hero-right {
   border-radius: 16px;
   border: 1px solid rgba(47,242,255,0.18);
   overflow: hidden;
   background: rgba(2,8,20,0.35);
-
-  /* fill the full grid row height */
-  display: flex;
-  align-items: stretch;
+  /* cap height so poster doesn't become enormous on wide screens */
+  max-height: 680px;
 }
 
 .poster-image {
   display: block;
   width: 100%;
   height: 100%;
+  max-height: 680px;
   object-fit: cover;
+  object-position: top;
   border-radius: 14px;
 }
 
 /* ─── Screenshots ────────────────────────────────────── */
-
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
@@ -354,9 +278,8 @@ section {
   width: 100%;
   max-width: 220px;
   margin: 0 auto;
-  /* no forced aspect-ratio so portrait shots are not cropped */
   height: auto;
-  max-height: 380px;
+  max-height: 360px;
   object-fit: contain;
   border-radius: 14px;
   border: 1px solid rgba(47,242,255,0.20);
@@ -370,8 +293,7 @@ figcaption {
   text-align: center;
 }
 
-/* ─── Forms (support / privacy) ─────────────────────── */
-
+/* ─── Forms ──────────────────────────────────────────── */
 .muted { color: rgba(155,182,211,0.95); }
 
 .form {
@@ -381,139 +303,75 @@ figcaption {
   align-items: center;
 }
 
-.form textarea    { grid-column: 1 / -1; }
-.form button.cta  { grid-column: 1 / -1; justify-self: flex-start; }
+.form textarea   { grid-column: 1 / -1; }
+.form button.cta { grid-column: 1 / -1; justify-self: flex-start; }
 
-label {
-  font-weight: 600;
-  color: rgba(230,240,255,0.9);
-}
+label { font-weight: 600; color: rgba(230,240,255,0.9); }
 
-input,
-textarea {
-  width: 100%;
-  box-sizing: border-box;
-  padding: 10px 12px;
-  border-radius: 12px;
+input, textarea {
+  width: 100%; box-sizing: border-box;
+  padding: 10px 12px; border-radius: 12px;
   border: 1px solid rgba(58,110,165,0.35);
   background: rgba(2,8,20,0.35);
   color: var(--text-main);
 }
 
-input::placeholder,
-textarea::placeholder { color: rgba(155,182,211,0.75); }
+input::placeholder, textarea::placeholder { color: rgba(155,182,211,0.75); }
 
 .cta {
-  display: inline-block;
-  padding: 10px 14px;
+  display: inline-block; padding: 10px 14px;
   border-radius: 999px;
   background: rgba(47,242,255,0.95);
-  color: rgba(2,8,20,0.92);
-  text-decoration: none;
-  font-weight: 800;
-  border: 1px solid rgba(47,242,255,0.35);
+  color: rgba(2,8,20,0.92); text-decoration: none;
+  font-weight: 800; border: 1px solid rgba(47,242,255,0.35);
   cursor: pointer;
 }
 
 /* ─── Footer ─────────────────────────────────────────── */
-
 footer {
-  text-align: center;
-  padding: 18px;
-  font-size: 0.85rem;
-  color: rgba(155,182,211,0.9);
+  text-align: center; padding: 18px;
+  font-size: 0.85rem; color: rgba(155,182,211,0.9);
   background: rgba(2,8,20,0.35);
   border-top: 1px solid rgba(47,242,255,0.10);
 }
 
 /* ─── Responsive: support form ───────────────────────── */
-
 @media (max-width: 700px) {
   .form { grid-template-columns: 1fr; }
 }
 
 /* ─── Responsive: mobile PORTRAIT ───────────────────── */
-
 @media (max-width: 899px) and (orientation: portrait) {
   body { background-attachment: scroll; }
 
-  .topbar {
-    grid-template-columns: 1fr;
-    row-gap: 10px;
-    justify-items: center;
-  }
-
+  .topbar { grid-template-columns: 1fr; row-gap: 10px; justify-items: center; }
   .header-badge { width: 140px; }
-
-  .nav-group {
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-  }
-
+  .nav-group { flex-direction: column; align-items: center; gap: 8px; }
   .nav { justify-content: center; flex-wrap: wrap; }
 
-  /* stack hero vertically */
-  .hero-section {
-    grid-template-columns: 1fr;
-    align-items: start;
-  }
+  .hero-section { grid-template-columns: 1fr; align-items: start; }
 
-  /* on mobile reviews stack with absolute positioning */
-  .reviews-strip {
-    flex: none;
-    position: relative;
-    min-height: 150px;
-    display: block;
-  }
+  /* reviews just stack naturally */
+  .reviews-strip { flex-direction: column; }
 
-  .review-card {
-    position: absolute;
-    inset: 0;
-    flex: none;
-  }
+  .hero-right { max-height: 340px; }
 
-  .hero-right {
-    min-height: 280px;
-  }
-
-  .hero-title-line { font-size: 38px; }
-
-  .shot { max-width: 100%; max-height: 320px; }
-
+  .hero-title-line { font-size: 36px; }
+  .shot { max-width: 100%; max-height: 300px; }
   .gallery { grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); }
 }
 
 /* ─── Responsive: mobile LANDSCAPE ──────────────────── */
-
 @media (max-width: 899px) and (orientation: landscape) {
   body { background-attachment: scroll; }
 
-  .topbar {
-    grid-template-columns: auto 1fr auto;
-    column-gap: 12px;
-  }
-
+  .topbar { grid-template-columns: auto 1fr auto; column-gap: 12px; }
   .header-badge { width: 120px; }
-
   .nav-group { flex-direction: row; gap: 6px; justify-content: flex-end; }
   .lang button { padding: 5px 7px; font-size: 0.78rem; }
   .navlink { padding: 5px 9px; font-size: 0.82rem; }
 
-  .hero-section { grid-template-columns: 1fr; }
-
-  .reviews-strip {
-    flex: none;
-    position: relative;
-    min-height: 140px;
-    display: block;
-  }
-
-  .review-card {
-    position: absolute;
-    inset: 0;
-    flex: none;
-  }
-
-  .hero-title-line { font-size: 32px; }
+  .hero-section { grid-template-columns: 1fr; align-items: start; }
+  .hero-title-line { font-size: 30px; }
+  .hero-right { max-height: 280px; }
 }
