@@ -2,38 +2,36 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>ArcBreaker: Ringfall Arena – Support</title>
+  <title>Support — ArcBreaker: Ringfall Arena</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Support for ArcBreaker: Ringfall Arena." />
   <link rel="stylesheet" href="/site/style.css" />
 </head>
-
 <body>
+
 <header class="top">
   <div class="topbar">
-    <div class="brand">
+    <a class="brand" href="/">
       <img class="appicon" src="/assets/App_icon_2.png" alt="ArcBreaker app icon" />
       <div class="brandtext">
         <div class="title">ARC</div>
         <div class="title">BREAKER</div>
         <div class="subtitle">RINGFALL ARENA</div>
       </div>
-    </div>
-
-    <a class="header-store-link" href="https://apps.apple.com/us/app/arcbreaker-ringfall-arena/id6757078402" target="_blank" rel="noopener" aria-label="Download ArcBreaker on the App Store">
+    </a>
+    <a class="header-store-link"
+       href="https://apps.apple.com/us/app/arcbreaker-ringfall-arena/id6757078402"
+       target="_blank" rel="noopener">
       <img class="header-badge" src="/assets/Download_on_the_App_Store_Badge_US.svg" alt="Download on the App Store" />
     </a>
-
     <div class="nav-group">
-      <div class="lang" aria-label="Language">
+      <div class="lang">
         <button onclick="setLang('de')">DE</button>
         <button onclick="setLang('en')">EN</button>
         <button onclick="setLang('es')">ES</button>
         <button onclick="setLang('fr')">FR</button>
       </div>
-
       <nav class="nav">
-        <a class="navlink" href="/" data-i18n="nav_home">Home</a>
+        <a class="navlink" href="/"         data-i18n="nav_home">Home</a>
         <a class="navlink" href="/support/" data-i18n="nav_support">Support</a>
         <a class="navlink" href="/privacy/" data-i18n="nav_privacy">Privacy</a>
       </nav>
@@ -43,173 +41,57 @@
 
 <main>
   <section>
-    <h2 data-i18n="support_title">Contact support</h2>
-    <p data-i18n="support_intro">
-      Use the form below to contact support. Your email app will open with a pre-filled message.
-      If you prefer, you can also email us directly at <a href="mailto:info@hafenente.de">info@hafenente.de</a>.
-    </p>
+    <h2 data-i18n="support_heading">Contact support</h2>
+    <p class="muted" data-i18n="support_intro">Use the form below to contact support. Your email app will open with a pre-filled message. If you prefer, you can also email us directly at info@hafenente.de.</p>
   </section>
 
   <section>
-    <h2 data-i18n="support_form_title">Support form</h2>
-    <form class="form" onsubmit="return false;">
-      <label for="support_message" data-i18n="support_text_label">Support text</label>
-      <textarea id="support_message" rows="6" placeholder="Describe the issue or feedback..."></textarea>
-
-      <label for="support_contact" data-i18n="support_email_label">Your email (optional)</label>
-      <input id="support_contact" type="email" placeholder="name@example.com" />
-
-      <label for="support_version" data-i18n="support_version_label">App version (from Credits, e.g. Version 1.2.3 (45))</label>
-      <input id="support_version" type="text" placeholder="Version ..." />
-
-      <label for="support_device" data-i18n="support_device_label">Device (optional)</label>
-      <input id="support_device" type="text" placeholder="e.g. iPhone 15 Pro" />
-
-      <label for="support_ios" data-i18n="support_ios_label">iOS version (optional)</label>
-      <input id="support_ios" type="text" placeholder="e.g. iOS 17.3" />
-
-      <button id="sendBtn" class="cta" type="button" data-i18n="support_btn">Open email draft</button>
-    </form>
-    <p class="muted" data-i18n="support_note">Note: this page does not store your data. The message is created on your device.</p>
+    <h3 data-i18n="form_heading">Support form</h3>
+    <div class="form">
+      <label data-i18n="form_label_text">Support text</label>
+      <label data-i18n="form_label_email">Your email (optional)</label>
+      <textarea id="supportText" rows="4" placeholder="Describe the issue or feedback..."></textarea>
+      <input id="userEmail" type="email" placeholder="name@example.com" />
+      <label data-i18n="form_label_version">App version (from Credits, e.g. Version 1.2.3 (45))</label>
+      <label data-i18n="form_label_device">Device (optional)</label>
+      <input id="appVersion" placeholder="Version ..." />
+      <input id="deviceName" placeholder="e.g. iPhone 15 Pro" />
+      <label data-i18n="form_label_ios">iOS version (optional)</label>
+      <div></div>
+      <input id="iosVersion" placeholder="e.g. iOS 17.3" />
+      <div></div>
+      <button class="cta" data-i18n="form_button" onclick="openEmailDraft()">Open email draft</button>
+    </div>
+    <p class="muted" style="margin-top:12px; font-size:0.85rem;" data-i18n="form_note">Note: this page does not store your data. The message is created on your device.</p>
   </section>
 </main>
 
-<footer>
-  © 2026 HafenEnte · Swen Grünwald · <a href="mailto:info@hafenente.de">info@hafenente.de</a>
-</footer>
+<footer>© 2026 HafenEnte · Swen Grünwald · <a href="mailto:info@hafenente.de">info@hafenente.de</a></footer>
+
+<script src="/site/lang.js"></script>
 
 <script>
-const supportEmail = "info@hafenente.de";
-
-function escapeMailBody(s) {
-  return encodeURIComponent((s || "").trim());
-}
-
-function buildMail(lang) {
-  const msg = document.getElementById("support_message").value;
-  const contact = document.getElementById("support_contact").value;
-  const version = document.getElementById("support_version").value;
-  const device = document.getElementById("support_device").value;
-  const ios = document.getElementById("support_ios").value;
-
-  const subjectByLang = {
-    en: "ArcBreaker Support",
-    de: "ArcBreaker Support",
-    es: "Soporte de ArcBreaker",
-    fr: "Assistance ArcBreaker"
-  };
-
-  const subject = subjectByLang[lang] || subjectByLang.en;
+function openEmailDraft() {
+  const text    = document.getElementById('supportText').value;
+  const email   = document.getElementById('userEmail').value;
+  const version = document.getElementById('appVersion').value;
+  const device  = document.getElementById('deviceName').value;
+  const ios     = document.getElementById('iosVersion').value;
 
   const body = [
-    `Language: ${lang}`,
-    "",
-    "Support message:",
-    msg || "(no message)",
-    "",
-    `Contact email: ${contact || "(not provided)"}`,
-    `App version: ${version || "(not provided)"}`,
-    `Device: ${device || "(not provided)"}`,
-    `iOS version: ${ios || "(not provided)"}`
-  ].join("\n");
+    text,
+    '',
+    version ? 'App Version: ' + version : '',
+    device  ? 'Device: '      + device  : '',
+    ios     ? 'iOS: '         + ios     : '',
+    email   ? 'Reply to: '    + email   : '',
+  ].filter(Boolean).join('\n');
 
-  return `mailto:${supportEmail}?subject=${encodeURIComponent(subject)}&body=${escapeMailBody(body)}`;
+  window.location.href = 'mailto:info@hafenente.de'
+    + '?subject=ArcBreaker%20Support'
+    + '&body=' + encodeURIComponent(body);
 }
-
-function wireUp(lang) {
-  const btn = document.getElementById("sendBtn");
-  btn.onclick = () => {
-    window.location.href = buildMail(lang);
-  };
-}
-
-/* Simple i18n reuse from home page keys plus support-specific labels */
-const i18nSupport = {
-  en: {
-    nav_home: "Home",
-    nav_support: "Support",
-    nav_privacy: "Privacy",
-    support_title: "Contact support",
-    support_intro: "Use the form below to contact support. Your email app will open with a pre-filled message. If you prefer, you can also email us directly at info@hafenente.de.",
-    support_form_title: "Support form",
-    support_text_label: "Support text",
-    support_email_label: "Your email (optional)",
-    support_version_label: "App version (from Credits, e.g. Version 1.2.3 (45))",
-    support_device_label: "Device (optional)",
-    support_ios_label: "iOS version (optional)",
-    support_btn: "Open email draft",
-    support_note: "Note: this page does not store your data. The message is created on your device."
-  },
-  de: {
-    nav_home: "Start",
-    nav_support: "Support",
-    nav_privacy: "Datenschutz",
-    support_title: "Support kontaktieren",
-    support_intro: "Nutze das Formular unten, um den Support zu kontaktieren. Deine Mail-App öffnet sich mit einer vorbefüllten Nachricht. Alternativ kannst du uns direkt per E-Mail erreichen: info@hafenente.de.",
-    support_form_title: "Support-Formular",
-    support_text_label: "Support-Text",
-    support_email_label: "Deine E-Mail (optional)",
-    support_version_label: "App-Version (aus Credits, z. B. Version 1.2.3 (45))",
-    support_device_label: "Gerät (optional)",
-    support_ios_label: "iOS-Version (optional)",
-    support_btn: "E-Mail-Entwurf öffnen",
-    support_note: "Hinweis: Diese Seite speichert keine Daten. Die Nachricht wird auf deinem Gerät erstellt."
-  },
-  es: {
-    nav_home: "Inicio",
-    nav_support: "Soporte",
-    nav_privacy: "Privacidad",
-    support_title: "Contactar soporte",
-    support_intro: "Usa el formulario de abajo para contactar con soporte. Se abrirá tu app de correo con un mensaje pre-rellenado. Si lo prefieres, también puedes escribirnos a info@hafenente.de.",
-    support_form_title: "Formulario de soporte",
-    support_text_label: "Texto de soporte",
-    support_email_label: "Tu correo (opcional)",
-    support_version_label: "Versión de la app (en Créditos, p. ej. Version 1.2.3 (45))",
-    support_device_label: "Dispositivo (opcional)",
-    support_ios_label: "Versión de iOS (opcional)",
-    support_btn: "Abrir borrador de email",
-    support_note: "Nota: esta página no guarda tus datos. El mensaje se crea en tu dispositivo."
-  },
-  fr: {
-    nav_home: "Accueil",
-    nav_support: "Assistance",
-    nav_privacy: "Confidentialité",
-    support_title: "Contacter l'assistance",
-    support_intro: "Utilisez le formulaire ci-dessous. Votre application Mail s'ouvrira avec un message pré-rempli. Vous pouvez aussi nous écrire directement à info@hafenente.de.",
-    support_form_title: "Formulaire de support",
-    support_text_label: "Texte de support",
-    support_email_label: "Votre email (optionnel)",
-    support_version_label: "Version de l'app (dans Crédits, ex. Version 1.2.3 (45))",
-    support_device_label: "Appareil (optionnel)",
-    support_ios_label: "Version iOS (optionnel)",
-    support_btn: "Ouvrir le brouillon d'email",
-    support_note: "Remarque : cette page ne stocke aucune donnée. Le message est créé sur votre appareil."
-  }
-};
-
-function detectLangSupport() {
-  const lang = navigator.language.slice(0,2);
-  return i18nSupport[lang] ? lang : "en";
-}
-
-function applyI18nSupport(lang) {
-  const dict = i18nSupport[lang] || i18nSupport.en;
-  document.documentElement.lang = lang;
-
-  document.querySelectorAll("[data-i18n]").forEach(el => {
-    const key = el.getAttribute("data-i18n");
-    if (dict[key]) el.textContent = dict[key];
-  });
-}
-
-function setLang(lang) {
-  applyI18nSupport(lang);
-  wireUp(lang);
-}
-
-const initialLang = detectLangSupport();
-applyI18nSupport(initialLang);
-wireUp(initialLang);
 </script>
+
 </body>
 </html>
