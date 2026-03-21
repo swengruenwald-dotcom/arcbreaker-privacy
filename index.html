@@ -7,8 +7,8 @@
   <meta name="description" content="ArcBreaker: Ringfall Arena — fast arcade block-breaking action for iPhone and iPad." />
   <link rel="stylesheet" href="/site/style.css" />
 </head>
-
 <body>
+
 <header class="top">
   <div class="topbar">
     <a class="brand" href="/">
@@ -19,27 +19,22 @@
         <div class="subtitle">RINGFALL ARENA</div>
       </div>
     </a>
-
     <a class="header-store-link"
        href="https://apps.apple.com/us/app/arcbreaker-ringfall-arena/id6757078402"
-       target="_blank" rel="noopener"
-       aria-label="Download ArcBreaker on the App Store">
-      <img class="header-badge"
-           src="/assets/Download_on_the_App_Store_Badge_US.svg"
-           alt="Download on the App Store" />
+       target="_blank" rel="noopener">
+      <img class="header-badge" src="/assets/Download_on_the_App_Store_Badge_US.svg" alt="Download on the App Store" />
     </a>
-
     <div class="nav-group">
-      <div class="lang" aria-label="Language">
+      <div class="lang">
         <button onclick="setLang('de')">DE</button>
         <button onclick="setLang('en')">EN</button>
         <button onclick="setLang('es')">ES</button>
         <button onclick="setLang('fr')">FR</button>
       </div>
       <nav class="nav">
-        <a class="navlink" href="/"          data-i18n="nav_home">Home</a>
-        <a class="navlink" href="/support/"  data-i18n="nav_support">Support</a>
-        <a class="navlink" href="/privacy/"  data-i18n="nav_privacy">Privacy</a>
+        <a class="navlink" href="/"         data-i18n="nav_home">Home</a>
+        <a class="navlink" href="/support/" data-i18n="nav_support">Support</a>
+        <a class="navlink" href="/privacy/" data-i18n="nav_privacy">Privacy</a>
       </nav>
     </div>
   </div>
@@ -47,11 +42,10 @@
 
 <main>
 
-  <!-- ── HERO ───────────────────────────────────────── -->
   <section class="hero-section">
-    <div class="hero-left">
 
-      <!-- title + copy -->
+    <!-- LEFT: title card + reviews -->
+    <div class="hero-left">
       <div class="hero-card">
         <div class="hero-title">
           <div class="hero-title-line">ARC</div>
@@ -64,14 +58,12 @@
              href="https://apps.apple.com/us/app/arcbreaker-ringfall-arena/id6757078402"
              target="_blank" rel="noopener">
             <span class="pill" data-i18n="download_now">Download now</span>
-            <img class="badge"
-                 src="/assets/Download_on_the_App_Store_Badge_US.svg"
-                 alt="Download on the App Store" />
+            <img class="badge" src="/assets/Download_on_the_App_Store_Badge_US.svg" alt="App Store" />
           </a>
         </div>
       </div>
 
-      <!-- rotating reviews -->
+      <!-- Reviews — height = content, no forced stretching -->
       <div class="reviews-strip" aria-label="Player reviews">
 
         <article class="review-card active">
@@ -155,38 +147,37 @@
       </div><!-- /reviews-strip -->
     </div><!-- /hero-left -->
 
-    <!-- poster — stretches to match hero-left height -->
+    <!-- RIGHT: poster capped in height -->
     <div class="hero-right">
       <img class="poster-image"
            src="/assets/advertisement_poster.jpg"
-           alt="ArcBreaker Ringfall Arena promotional poster"
+           alt="ArcBreaker promotional poster"
            loading="lazy" />
     </div>
 
-  </section><!-- /hero-section -->
+  </section>
 
-  <!-- ── SCREENSHOTS ────────────────────────────────── -->
   <section id="screens">
     <h2 data-i18n="shots_title">Screenshots</h2>
     <div class="gallery">
       <figure>
-        <img class="shot" src="/assets/MakePoints.jpg"        alt="Make points"        loading="lazy" />
+        <img class="shot" src="/assets/MakePoints.jpg"      alt="Make points"       loading="lazy" />
         <figcaption data-i18n="cap_makepoints">Make points</figcaption>
       </figure>
       <figure>
-        <img class="shot" src="/assets/ControlYourHalf.jpg"   alt="Control your half"  loading="lazy" />
+        <img class="shot" src="/assets/ControlYourHalf.jpg" alt="Control your half" loading="lazy" />
         <figcaption data-i18n="cap_control">Control your half</figcaption>
       </figure>
       <figure>
-        <img class="shot" src="/assets/Powerups.jpg"          alt="Use power-ups"      loading="lazy" />
+        <img class="shot" src="/assets/Powerups.jpg"        alt="Use power-ups"     loading="lazy" />
         <figcaption data-i18n="cap_powerups">Use power-ups</figcaption>
       </figure>
       <figure>
-        <img class="shot" src="/assets/LevelUp.jpg"           alt="Level up"           loading="lazy" />
+        <img class="shot" src="/assets/LevelUp.jpg"         alt="Level up"          loading="lazy" />
         <figcaption data-i18n="cap_levelup">Level up</figcaption>
       </figure>
       <figure>
-        <img class="shot" src="/assets/leaderboards.jpg"      alt="Leaderboards"       loading="lazy" />
+        <img class="shot" src="/assets/leaderboards.jpg"    alt="Leaderboards"      loading="lazy" />
         <figcaption data-i18n="cap_leaderboards">Leaderboards</figcaption>
       </figure>
     </div>
@@ -194,91 +185,30 @@
 
 </main>
 
-<footer>
-  © 2026 HafenEnte · Swen Grünwald
-</footer>
+<footer>© 2026 HafenEnte · Swen Grünwald</footer>
 
-<!-- ── i18n ──────────────────────────────────────────── -->
+<script src="/site/lang.js"></script>
+
 <script>
-const i18n = {
-  en: {
-    nav_home: "Home", nav_support: "Support", nav_privacy: "Privacy",
-    download_now: "Download now",
-    hero: "ArcBreaker is a fast arcade game where timing and precision matter. Break bricks, protect the lower half, collect power-ups and climb the leaderboard. Built for casual, quick sessions with Game Center integration for global and friends leaderboards.",
-    shots_title: "Screenshots",
-    cap_makepoints: "Make points", cap_control: "Control your half",
-    cap_powerups: "Use power-ups", cap_levelup: "Level up",
-    cap_leaderboards: "Leaderboards",
-  },
-  de: {
-    nav_home: "Start", nav_support: "Support", nav_privacy: "Datenschutz",
-    download_now: "Jetzt laden",
-    hero: "ArcBreaker ist ein schnelles Arcade-Spiel, bei dem Timing und Präzision zählen. Zerstöre Blöcke, schütze die untere Hälfte, sammle Power-ups und klettere in der Bestenliste. Für kurze Sessions – mit Game-Center-Integration.",
-    shots_title: "Screenshots",
-    cap_makepoints: "Punkte machen", cap_control: "Kontrolliere deine Hälfte",
-    cap_powerups: "Power-ups nutzen", cap_levelup: "Level up",
-    cap_leaderboards: "Bestenlisten",
-  },
-  es: {
-    nav_home: "Inicio", nav_support: "Soporte", nav_privacy: "Privacidad",
-    download_now: "Descargar",
-    hero: "ArcBreaker es un juego arcade rápido donde el tiempo y la precisión importan. Rompe bloques, protege la mitad inferior, recoge potenciadores y sube en la clasificación.",
-    shots_title: "Capturas",
-    cap_makepoints: "Haz puntos", cap_control: "Controla tu mitad",
-    cap_powerups: "Usa potenciadores", cap_levelup: "Sube de nivel",
-    cap_leaderboards: "Clasificaciones",
-  },
-  fr: {
-    nav_home: "Accueil", nav_support: "Assistance", nav_privacy: "Confidentialité",
-    download_now: "Télécharger",
-    hero: "ArcBreaker est un jeu d'arcade rapide où le timing et la précision comptent. Cassez des briques, protégez la moitié inférieure, récupérez des power-ups et grimpez dans le classement.",
-    shots_title: "Captures d'écran",
-    cap_makepoints: "Marquer des points", cap_control: "Contrôlez votre moitié",
-    cap_powerups: "Utiliser des power-ups", cap_levelup: "Monter de niveau",
-    cap_leaderboards: "Classements",
-  },
-};
-
-function applyI18n(lang) {
-  const dict = i18n[lang] || i18n.en;
-  document.documentElement.lang = lang;
-  document.querySelectorAll("[data-i18n]").forEach(el => {
-    const key = el.getAttribute("data-i18n");
-    if (dict[key]) el.textContent = dict[key];
-  });
-  const heroCopy = document.getElementById("heroCopy");
-  if (heroCopy) heroCopy.textContent = dict.hero;
-}
-
-function setLang(lang) { applyI18n(lang); }
-applyI18n((navigator.language || 'en').slice(0, 2));
-</script>
-
-<!-- ── Review rotator ────────────────────────────────── -->
-<script>
+// Review rotator — 2 cards shown simultaneously on desktop, 1 on mobile
 (function () {
-  const cards = Array.from(document.querySelectorAll(".reviews-strip .review-card"));
+  const cards = Array.from(document.querySelectorAll('.reviews-strip .review-card'));
   if (!cards.length) return;
 
   let index = 0;
-
-  function isDesktop() {
-    return window.matchMedia("(min-width: 900px)").matches;
-  }
+  const desktop = () => window.matchMedia('(min-width: 900px)').matches;
 
   function applyActive() {
-    cards.forEach(c => c.classList.remove("active"));
-    if (isDesktop()) {
-      cards[index % cards.length].classList.add("active");
-      cards[(index + 1) % cards.length].classList.add("active");
-    } else {
-      cards[index % cards.length].classList.add("active");
+    cards.forEach(c => c.classList.remove('active'));
+    cards[index % cards.length].classList.add('active');
+    if (desktop()) {
+      cards[(index + 1) % cards.length].classList.add('active');
     }
   }
 
   applyActive();
   setInterval(() => { index = (index + 1) % cards.length; applyActive(); }, 6000);
-  window.addEventListener("resize", applyActive);
+  window.addEventListener('resize', applyActive);
 })();
 </script>
 
