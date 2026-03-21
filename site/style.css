@@ -192,26 +192,29 @@ section {
   Hidden cards take no space (display:none toggled by JS class).
   On mobile: same — block flow, natural height, no absolute stacking.
 */
+/* ─── Reviews strip ──────────────────────────────────── */
 .reviews-strip {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  /* no overflow:hidden — let cards breathe to full content height */
 }
 
 /* all cards hidden by default */
 .review-card {
   display: none;
   border-radius: 16px;
-  border: 1px solid rgba(47,242,255,0.35);
+  border: 1px solid rgba(47, 242, 255, 0.35);
   background: radial-gradient(800px 300px at 0% 0%,
-              rgba(47,242,255,0.22), rgba(2,8,20,0.96));
-  box-shadow: 0 14px 40px rgba(0,0,0,0.55);
-  padding: 14px 16px;
-  /* NO height forcing — size to content */
+              rgba(47, 242, 255, 0.22), rgba(2, 8, 20, 0.96));
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.55);
+  padding: 16px 16px 14px;
+  /* height is always auto — determined by content, no clipping */
+  width: 100%;
+  box-sizing: border-box;
   animation: fadeSlideIn 0.35s ease;
 }
 
-/* visible card */
 .review-card.active {
   display: block;
 }
@@ -308,15 +311,30 @@ figcaption {
 
 label { font-weight: 600; color: rgba(230,240,255,0.9); }
 
-input, textarea {
-  width: 100%; box-sizing: border-box;
-  padding: 10px 12px; border-radius: 12px;
-  border: 1px solid rgba(58,110,165,0.35);
-  background: rgba(2,8,20,0.35);
+input,
+textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px 12px;
+  border-radius: 12px;
+  /* was rgba(58,110,165,0.35) — raised opacity significantly */
+  border: 1px solid rgba(100, 160, 220, 0.75);
+  background: rgba(2, 8, 20, 0.45);
   color: var(--text-main);
+  outline: none;
+  transition: border-color 0.2s ease;
 }
 
-input::placeholder, textarea::placeholder { color: rgba(155,182,211,0.75); }
+input:focus,
+textarea:focus {
+  border-color: rgba(47, 242, 255, 0.80);
+  box-shadow: 0 0 0 2px rgba(47, 242, 255, 0.12);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: rgba(155, 182, 211, 0.75);
+}
 
 .cta {
   display: inline-block; padding: 10px 14px;
@@ -351,11 +369,13 @@ footer {
 
   .hero-section { grid-template-columns: 1fr; align-items: start; }
 
-  /* reviews just stack naturally */
-  .reviews-strip { flex-direction: column; }
+  /* reviews: natural block flow, no height constraints */
+  .reviews-strip {
+    flex-direction: column;
+    overflow: visible;   /* ensure no clipping */
+  }
 
   .hero-right { max-height: 340px; }
-
   .hero-title-line { font-size: 36px; }
   .shot { max-width: 100%; max-height: 300px; }
   .gallery { grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); }
