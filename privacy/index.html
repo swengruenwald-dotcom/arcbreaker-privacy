@@ -57,8 +57,6 @@ const navLabels = {
 
 const texts = {
 
-// (existing texts unchanged below)
-
 de: `
 <section>
 <h2>Impressum</h2>
@@ -78,7 +76,7 @@ Deutschland<br><br>
 <h2>Datenschutzerklärung</h2>
 <p>
 Diese Datenschutzerklärung gilt für die mobile App
-<strong>„ArcBreaker: Ringfall Arena“</strong>.
+<strong>„ArcBreaker: Ringfall Arena"</strong>.
 </p>
 </section>
 
@@ -126,7 +124,7 @@ Dabei verarbeitet Apple eigenständig Spielername, Spieler-ID und Spielstände.
 </section>
 
 <section>
-<h3>Spielanalyse & Verbesserungen (Supabase)</h3>
+<h3>Spielanalyse &amp; Verbesserungen (Supabase)</h3>
 <p>
 Wir erfassen Telemetriedaten zum Spielverlauf, um zu verstehen, wie das Spiel genutzt wird,
 und um die Nutzererfahrung zu verbessern. Diese Daten umfassen gewählte Spielmodi,
@@ -134,14 +132,38 @@ erreichte Level, Punktzahlen und technische Fehler.
 </p>
 <p>
 <strong>Wie wir Sie identifizieren:</strong> Wir kennen weder Ihren Namen, Ihre E-Mail-Adresse noch Ihre reale Identität.
-Stattdessen generiert die App beim ersten Start eine zufällige „Installations-ID“ (eine eindeutige Zeichenfolge).
+Stattdessen generiert die App beim ersten Start eine zufällige „Installations-ID" (eine eindeutige Zeichenfolge).
 Diese ID ermöglicht es uns, zwischen neuen und wiederkehrenden Spielern zu unterscheiden,
-um Kennzahlen wie „aktive Nutzer“ oder „Level-Abschlussraten“ zu berechnen.
+um Kennzahlen wie „aktive Nutzer" oder „Level-Abschlussraten" zu berechnen.
 </p>
 <p>
 Diese Daten werden sicher auf unseren privaten Servern (Supabase) gespeichert und ausschließlich
 für interne Spielanalysen verwendet. Sie werden <strong>nicht</strong> an Datenbroker weitergegeben
 oder verwendet, um Ihre Aktivitäten über andere Apps oder Websites hinweg zu verfolgen.
+</p>
+</section>
+
+<section>
+<h3>Ligasystem &amp; Ranglisten</h3>
+<p>
+ArcBreaker verfügt über ein wöchentliches Ligasystem, das Spieler nach dem in der Ligawoche
+verdienten XP bewertet. Ihre Liga-Stufe (z. B. Konkurrenten, Herausforderer, Elite) und Ihr
+wöchentliches XP-Guthaben werden auf unseren privaten Supabase-Servern gespeichert und ausschließlich
+Ihrer anonymen Installations-ID zugeordnet — niemals Ihrem Namen oder Ihrer realen Identität.
+Die Ranglisten werden wöchentlich zurückgesetzt; historische Saisonergebnisse werden gespeichert,
+um Ihren persönlichen Fortschritt im Zeitverlauf darzustellen.
+</p>
+</section>
+
+<section>
+<h3>Tägliche Quests &amp; Streak-Verfolgung</h3>
+<p>
+Die App erfasst Ihre täglichen Quest-Abschlüsse sowie Ihre tägliche Spielserie (Streak).
+Diese Daten (Quest-Typ, Abschlusszeitpunkt, Streak-Anzahl) werden lokal auf Ihrem Gerät
+gespeichert und unter Ihrer anonymen Installations-ID mit unseren privaten Supabase-Servern
+synchronisiert. Sie dienen ausschließlich zur Berechnung von XP-Multiplikatoren, zur Anzeige
+Ihres Streak-Abzeichens und zur Anpassung des Quest-Schwierigkeitsgrads. Diese Daten werden
+nicht an Dritte weitergegeben.
 </p>
 </section>
 
@@ -182,7 +204,7 @@ Germany<br><br>
 <h2>Privacy Policy</h2>
 <p>
 This privacy policy applies to the mobile app
-<strong>“ArcBreaker: Ringfall Arena”</strong>.
+<strong>"ArcBreaker: Ringfall Arena"</strong>.
 </p>
 </section>
 
@@ -199,7 +221,7 @@ Hamburg, Germany
 <p>
 The app uses Google AdMob to display advertisements.
 In the European Union, user consent is obtained via
-Google’s User Messaging Platform (UMP).
+Google's User Messaging Platform (UMP).
 </p>
 <p>
 Personalized advertising is only enabled if:
@@ -216,7 +238,7 @@ Otherwise, only non-personalized ads are shown.
 <section>
 <h3>App Tracking Transparency (ATT)</h3>
 <p>
-The app uses Apple’s App Tracking Transparency framework.
+The app uses Apple's App Tracking Transparency framework.
 Access to the advertising identifier (IDFA) is only possible
 after explicit user permission.
 </p>
@@ -231,7 +253,7 @@ Apple independently processes player names, player IDs and scores.
 </section>
 
 <section>
-<h3>Game Analytics & Improvements (Supabase)</h3>
+<h3>Game Analytics &amp; Improvements (Supabase)</h3>
 <p>
 We collect gameplay telemetry to help us understand how the game is played and to improve the user experience.
 This data includes game modes selected, levels reached, scores, and technical errors.
@@ -249,9 +271,31 @@ It is <strong>not</strong> shared with third-party data brokers or used to track
 </section>
 
 <section>
+<h3>League System &amp; Competitive Rankings</h3>
+<p>
+ArcBreaker features a weekly league system that ranks players by XP earned during each league week.
+Your league tier (e.g. Competitors, Challengers, Elite) and your weekly XP total are stored on our
+private Supabase servers, linked only to your anonymous Installation ID — never to your name or
+real-world identity. League standings reset each week; historical season results are retained to
+show your personal progression over time.
+</p>
+</section>
+
+<section>
+<h3>Daily Quests &amp; Streak Tracking</h3>
+<p>
+The app tracks your completion of daily quests and your consecutive daily play streak.
+This data (quest type, completion timestamp, streak count) is stored locally on your device
+and synchronised with our private Supabase servers under your anonymous Installation ID.
+It is used solely to calculate XP multipliers, display your streak badge, and personalise
+quest difficulty. This data is never shared with third parties.
+</p>
+</section>
+
+<section>
 <h3>International Data Processing</h3>
 <p>
-Depending on the user’s location, data may be processed outside
+Depending on the user's location, data may be processed outside
 their country. Appropriate safeguards such as standard contractual
 clauses are applied.
 </p>
@@ -285,7 +329,7 @@ Alemania<br><br>
 <h2>Política de Privacidad</h2>
 <p>
 Esta política de privacidad se aplica a la aplicación móvil
-<strong>“ArcBreaker: Ringfall Arena”</strong>.
+<strong>"ArcBreaker: Ringfall Arena"</strong>.
 </p>
 </section>
 
@@ -353,6 +397,30 @@ para rastrear su actividad en otras aplicaciones o sitios web.
 </section>
 
 <section>
+<h3>Sistema de Ligas y Clasificaciones</h3>
+<p>
+ArcBreaker cuenta con un sistema de ligas semanal que clasifica a los jugadores según el XP
+obtenido durante cada semana de liga. Su nivel de liga (p. ej. Competidores, Retadores, Élite)
+y su XP semanal se almacenan en nuestros servidores privados de Supabase, vinculados únicamente
+a su ID de instalación anónimo — nunca a su nombre ni a su identidad real.
+Las clasificaciones se reinician cada semana; los resultados históricos de temporada se conservan
+para mostrar su progresión personal a lo largo del tiempo.
+</p>
+</section>
+
+<section>
+<h3>Misiones Diarias y Seguimiento de Racha</h3>
+<p>
+La aplicación registra la finalización de sus misiones diarias y su racha de juego consecutiva.
+Estos datos (tipo de misión, marca de tiempo de finalización, recuento de racha) se almacenan
+localmente en su dispositivo y se sincronizan con nuestros servidores privados de Supabase bajo
+su ID de instalación anónimo. Se utilizan exclusivamente para calcular multiplicadores de XP,
+mostrar su insignia de racha y personalizar la dificultad de las misiones.
+Estos datos nunca se comparten con terceros.
+</p>
+</section>
+
+<section>
 <h3>Tratamiento Internacional de Datos</h3>
 <p>
 Dependiendo de la ubicación del usuario, los datos pueden
@@ -387,7 +455,7 @@ Allemagne<br><br>
 <section>
 <h2>Politique de confidentialité</h2>
 <p>
-Cette politique de confidentialité s’applique à l’application mobile
+Cette politique de confidentialité s'applique à l'application mobile
 <strong>« ArcBreaker: Ringfall Arena »</strong>.
 </p>
 </section>
@@ -403,8 +471,8 @@ Hambourg, Allemagne
 <section>
 <h3>Publicité (Google AdMob)</h3>
 <p>
-L’application utilise Google AdMob pour afficher des publicités.
-Dans l’Union européenne, le consentement est recueilli via
+L'application utilise Google AdMob pour afficher des publicités.
+Dans l'Union européenne, le consentement est recueilli via
 Google User Messaging Platform (UMP).
 </p>
 <p>
@@ -412,7 +480,7 @@ Les publicités personnalisées ne sont affichées que si :
 </p>
 <ul>
 <li>un consentement valide a été donné</li>
-<li>et l’autorisation App Tracking Transparency (ATT) est accordée</li>
+<li>et l'autorisation App Tracking Transparency (ATT) est accordée</li>
 </ul>
 <p>
 Sinon, seules des publicités non personnalisées sont affichées.
@@ -422,8 +490,8 @@ Sinon, seules des publicités non personnalisées sont affichées.
 <section>
 <h3>App Tracking Transparency (ATT)</h3>
 <p>
-L’application utilise le framework App Tracking Transparency d’Apple.
-L’accès à l’identifiant publicitaire (IDFA) nécessite le consentement explicite.
+L'application utilise le framework App Tracking Transparency d'Apple.
+L'accès à l'identifiant publicitaire (IDFA) nécessite le consentement explicite.
 </p>
 </section>
 
@@ -455,9 +523,33 @@ pour suivre votre activité sur d'autres applications ou sites web.
 </section>
 
 <section>
+<h3>Système de Ligues et Classements</h3>
+<p>
+ArcBreaker propose un système de ligues hebdomadaire qui classe les joueurs en fonction de l'XP
+accumulé au cours de chaque semaine de ligue. Votre niveau de ligue (p. ex. Compétiteurs,
+Challengers, Élite) et votre total d'XP hebdomadaire sont stockés sur nos serveurs Supabase privés,
+associés uniquement à votre identifiant d'installation anonyme — jamais à votre nom ni à votre
+identité réelle. Les classements sont réinitialisés chaque semaine ; les résultats historiques des
+saisons sont conservés pour afficher votre progression personnelle au fil du temps.
+</p>
+</section>
+
+<section>
+<h3>Quêtes Quotidiennes et Suivi des Séries</h3>
+<p>
+L'application enregistre la complétion de vos quêtes quotidiennes ainsi que votre série de jeu
+consécutive. Ces données (type de quête, horodatage de complétion, nombre de jours consécutifs)
+sont stockées localement sur votre appareil et synchronisées avec nos serveurs Supabase privés
+sous votre identifiant d'installation anonyme. Elles sont utilisées uniquement pour calculer les
+multiplicateurs d'XP, afficher votre badge de série et personnaliser la difficulté des quêtes.
+Ces données ne sont jamais partagées avec des tiers.
+</p>
+</section>
+
+<section>
 <h3>Traitement international des données</h3>
 <p>
-Selon la localisation de l’utilisateur, les données peuvent être
+Selon la localisation de l'utilisateur, les données peuvent être
 traitées en dehors de son pays. Des garanties appropriées sont appliquées.
 </p>
 </section>
@@ -465,7 +557,7 @@ traitées en dehors de son pays. Des garanties appropriées sont appliquées.
 <section>
 <h3>Droits des utilisateurs</h3>
 <p>
-Les utilisateurs disposent d’un droit d’accès, de rectification,
+Les utilisateurs disposent d'un droit d'accès, de rectification,
 de suppression et de limitation du traitement de leurs données personnelles.
 </p>
 </section>
