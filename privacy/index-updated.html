@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>ArcBreaker: Ringfall Arena – Privacy Policy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Privacy Policy for ArcBreaker: Ringfall Arena." />
+  <link rel="stylesheet" href="/site/style.css" />
+</head>
+
+<body>
+<header class="top">
+  <div class="topbar">
+    <div class="brand">
+      <img class="appicon" src="/assets/App_icon_2.png" alt="ArcBreaker app icon" />
+      <div class="brandtext">
+        <div class="title">ARC</div>
+        <div class="title">BREAKER</div>
+        <div class="subtitle">RINGFALL ARENA</div>
+      </div>
+    </div>
+
+    <a class="header-store-link" href="https://apps.apple.com/us/app/arcbreaker-ringfall-arena/id6757078402" target="_blank" rel="noopener" aria-label="Download ArcBreaker on the App Store">
+      <img class="header-badge" src="/assets/Download_on_the_App_Store_Badge_US.svg" alt="Download on the App Store" />
+    </a>
+
+    <div class="nav-group">
+      <div class="lang" aria-label="Language">
+        <button onclick="setLang('de')">DE</button>
+        <button onclick="setLang('en')">EN</button>
+        <button onclick="setLang('es')">ES</button>
+        <button onclick="setLang('fr')">FR</button>
+      </div>
+
+      <nav class="nav">
+        <a class="navlink" href="/" data-i18n="nav_home">Home</a>
+        <a class="navlink" href="/support/" data-i18n="nav_support">Support</a>
+        <a class="navlink" href="/privacy/" data-i18n="nav_privacy">Privacy</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<main id="content"></main>
+
+<footer>
+  © 2026 HafenEnte · Swen Grünwald
+</footer>
+
+<script>
+const navLabels = {
+  en: { nav_home: "Home", nav_support: "Support", nav_privacy: "Privacy" },
+  de: { nav_home: "Start", nav_support: "Support", nav_privacy: "Datenschutz" },
+  es: { nav_home: "Inicio", nav_support: "Soporte", nav_privacy: "Privacidad" },
+  fr: { nav_home: "Accueil", nav_support: "Assistance", nav_privacy: "Confidentialité" },
+};
+
+const texts = {
+
+de: `
+<section>
+<h2>Impressum</h2>
+<p>
+<strong>Name:</strong> Swen Grünwald<br>
+<strong>Firmenname:</strong> HafenEnte<br>
+<strong>Adresse:</strong><br>
+Grindelallee 110<br>
+20146 Hamburg<br>
+Deutschland<br><br>
+<strong>Telefon:</strong> +49 176 34313254<br>
+<strong>E-Mail:</strong> <a href="mailto:info@hafenente.de">info@hafenente.de</a>
+</p>
+</section>
+
+<section>
+<h2>Datenschutzerklärung</h2>
+<p>Zuletzt aktualisiert: Mai 2026</p>
+<p>
+Diese Datenschutzerklärung gilt für die mobile App
+<strong>„ArcBreaker: Ringfall Arena"</strong> (iOS).
+ArcBreaker wurde mit Datenschutz als Grundprinzip entwickelt.
+Alle Spielfortschritte, XP, Quests und Einstellungen werden primär lokal auf Ihrem Gerät gespeichert.
+Zum Spielen ist keine Registrierung oder Erstellung eines Kontos erforderlich.
+</p>
+</section>
+
+<section>
+<h3>Verantwortlicher</h3>
+<p>
+Swen Grünwald (HafenEnte)<br>
+Grindelallee 110, 20146 Hamburg, Deutschland<br>
+<a href="mailto:info@hafenente.de">info@hafenente.de</a>
+</p>
+</section>
+
+<section>
+<h3>Nur lokal gespeicherte Daten</h3>
+<p>Die folgenden Daten verlassen Ihr Gerät niemals und werden ausschließlich lokal gespeichert:</p>
+<ul>
+<li>Spielstatistiken (Punkte, Überlebenszeit, Spielverlauf)</li>
+<li>XP-Fortschritt und Quest-Fortschritt</li>
+<li>Tägliche Quest-Strähne und Abschlussstatus</li>
+<li>Spieleinstellungen (Ton, Haptik, Design)</li>
+<li>Status abgeschlossener Tutorials</li>
+<li>Einwilligungsstatus für Werbung und Zeitstempel</li>
+</ul>
+</section>
+
+<section>
+<h3>Spielanalyse &amp; Verbesserungen (Supabase)</h3>
+<p>
+Wir erfassen anonymisierte Spielereignisse (z. B. Spielstart, Quest abgeschlossen, Werbung angesehen,
+Spielende), um zu verstehen, wie Spieler die App nutzen, und um sie zu verbessern.
+</p>
+<p>
+<strong>Wie wir Sie identifizieren:</strong> Wir kennen weder Ihren Namen noch Ihre E-Mail-Adresse
+noch Ihre reale Identität. Diese Ereignisse enthalten ausschließlich eine anonyme Sitzungs-ID —
+niemals persönliche Daten. Daten werden nicht an Dritte oder Datenvermittler weitergegeben und
+nicht dazu genutzt, Ihre Aktivitäten über andere Apps oder Websites hinweg zu verfolgen.
+</p>
+<p>Analyseereignisse werden 90 Tage lang gespeichert und anschließend gelöscht.</p>
+</section>
+
+<section>
+<h3>Ligasystem &amp; Ranglisten</h3>
+<p>
+ArcBreaker verfügt über ein wöchentliches Ligasystem, das Spieler nach dem in der Ligawoche
+verdienten XP bewertet. Ihre Liga-Stufe (z. B. Konkurrenten, Herausforderer, Elite) und Ihr
+wöchentliches XP-Guthaben werden auf unseren privaten Supabase-Servern gespeichert — ausschließlich
+verknüpft mit Ihrer anonymen Apple Game Center Spieler-ID, niemals mit Ihrem Namen oder Ihrer
+realen Identität. Historische Saisonergebnisse werden zur Darstellung Ihres persönlichen Fortschritts
+gespeichert. Liga-Einträge werden nach Ablauf der Saison (7 Tage) anonymisiert.
+</p>
+</section>
+
+<section>
+<h3>Tägliche Quests &amp; Streak-Verfolgung</h3>
+<p>
+Die App erfasst Ihre täglichen Quest-Abschlüsse sowie Ihre tägliche Spielserie (Streak).
+Diese Daten (Quest-Typ, Abschlusszeitpunkt, Streak-Anzahl) werden lokal auf Ihrem Gerät gespeichert.
+Sie dienen ausschließlich zur Berechnung von XP-Multiplikatoren, zur Anzeige Ihres Streak-Abzeichens
+und zur Anpassung des Quest-Schwierigkeitsgrads. Diese Daten werden nicht an Dritte weitergegeben.
+</p>
+</section>
+
+<section>
+<h3>Werbung (Google AdMob)</h3>
+<p>
+Die App verwendet Google AdMob zur Anzeige von Werbung. In der Europäischen Union erfolgt die
+Einholung der Einwilligung über die Google User Messaging Platform (UMP).
+</p>
+<p>Personalisierte Werbung wird nur angezeigt, wenn:</p>
+<ul>
+<li>eine gültige Einwilligung vorliegt (UMP / DSGVO)</li>
+<li>und App Tracking Transparency (ATT) von Apple genehmigt wurde</li>
+</ul>
+<p>
+Andernfalls werden ausschließlich nicht-personalisierte Anzeigen ausgeliefert
+(das Flag <code>npa=1</code> wird mit jeder Anfrage gesendet).
+Die Einwilligung kann jederzeit unter Einstellungen → Datenschutz in der App widerrufen werden.
+</p>
+<p>Datenschutzerklärung von Google: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></p>
+</section>
+
+<section>
+<h3>App Tracking Transparency (ATT)</h3>
+<p>
+Die App nutzt das Apple App Tracking Transparency Framework. Ab iOS 14.5 wird ein Systemdialog
+angezeigt, der Sie um Erlaubnis bittet, Ihre Aktivitäten über Apps anderer Unternehmen hinweg zu
+verfolgen. Sie können dies ablehnen, ohne dass Spielfunktionen beeinträchtigt werden.
+Ein Zugriff auf die Werbe-ID (IDFA) erfolgt nur nach ausdrücklicher Zustimmung.
+</p>
+</section>
+
+<section>
+<h3>Apple Game Center</h3>
+<p>
+Für Bestenlisten und Erfolge wird Apple Game Center verwendet. Ihre Game Center Spieler-ID
+verknüpft Ihren Liga-Rang geräteübergreifend — niemals mit Ihrem Namen oder Ihrer E-Mail-Adresse.
+Apple verarbeitet Game Center-Daten eigenständig gemäß der Apple-Datenschutzrichtlinie:
+<a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">apple.com/legal/privacy</a>
+</p>
+</section>
+
+<section>
+<h3>Datenspeicherung</h3>
+<table>
+<thead><tr><th>Datentyp</th><th>Speicherort</th><th>Aufbewahrung</th></tr></thead>
+<tbody>
+<tr><td>Spielstatistiken / Fortschritt</td><td>Gerät (lokal)</td><td>Bis zur Deinstallation</td></tr>
+<tr><td>Liga-XP-Eintrag</td><td>Supabase</td><td>7 Tage (Saison), dann anonymisiert</td></tr>
+<tr><td>Analyseereignisse</td><td>Supabase</td><td>90 Tage, dann gelöscht</td></tr>
+<tr><td>Werbeeinwilligung (Zeitstempel)</td><td>Gerät (lokal)</td><td>12 Monate, dann erneute Anfrage</td></tr>
+</tbody>
+</table>
+</section>
+
+<section>
+<h3>Datenschutz für Kinder</h3>
+<p>
+ArcBreaker erhebt wissentlich keine personenbezogenen Daten von Kindern unter 13 Jahren
+(bzw. unter 16 Jahren im EWR). Die App enthält keine Funktionen, die die Erstellung eines
+Kontos oder die Übermittlung personenbezogener Daten erfordern.
+</p>
+</section>
+
+<section>
+<h3>Ihre Rechte (DSGVO)</h3>
+<p>Wenn Sie sich im Europäischen Wirtschaftsraum befinden, haben Sie folgende Rechte:</p>
+<ul>
+<li><strong>Auskunftsrecht</strong> – Kopie Ihrer gespeicherten Daten anfordern</li>
+<li><strong>Recht auf Löschung</strong> – Löschung Ihrer Liga- und Analysedaten beantragen</li>
+<li><strong>Widerrufsrecht</strong> – Werbeeinwilligung jederzeit in der App unter Einstellungen → Datenschutz ändern</li>
+<li><strong>Widerspruchsrecht</strong> – Datenverarbeitung zu Analysezwecken widersprechen</li>
+</ul>
+<p>Zur Ausübung Ihrer Rechte kontaktieren Sie uns unter: <a href="mailto:info@hafenente.de">info@hafenente.de</a></p>
+</section>
+
+<section>
+<h3>Internationale Datenverarbeitung</h3>
+<p>
+Je nach Standort des Nutzers kann eine Datenverarbeitung außerhalb des jeweiligen Landes erfolgen.
+Dabei werden geeignete Schutzmaßnahmen (z. B. Standardvertragsklauseln) eingesetzt.
+</p>
+</section>
+
+<section>
+<h3>Änderungen dieser Datenschutzerklärung</h3>
+<p>
+Wir können diese Datenschutzerklärung von Zeit zu Zeit aktualisieren. Die aktualisierte Fassung
+wird in der App und im App-Store-Eintrag veröffentlicht. Die weitere Nutzung der App nach
+Änderungen gilt als Zustimmung zur überarbeiteten Fassung.
+</p>
+</section>
+`,
+
+en: `
+<section>
+<h2>Imprint</h2>
+<p>
+<strong>Name:</strong> Swen Grünwald<br>
+<strong>Company:</strong> HafenEnte<br>
+<strong>Address:</strong><br>
+Grindelallee 110<br>
+20146 Hamburg<br>
+Germany<br><br>
+<strong>Phone:</strong> +49 176 34313254<br>
+<strong>Email:</strong> <a href="mailto:info@hafenente.de">info@hafenente.de</a>
+</p>
+</section>
+
+<section>
+<h2>Privacy Policy</h2>
+<p>Last updated: May 2026</p>
+<p>
+This privacy policy applies to the mobile app
+<strong>"ArcBreaker: Ringfall Arena"</strong> (iOS).
+ArcBreaker is designed with privacy as a foundation. All gameplay progression, XP, quests, and
+settings are stored primarily on your device. No account or registration is required to play.
+</p>
+</section>
+
+<section>
+<h3>Data Controller</h3>
+<p>
+Swen Grünwald (HafenEnte)<br>
+Grindelallee 110, 20146 Hamburg, Germany<br>
+<a href="mailto:info@hafenente.de">info@hafenente.de</a>
+</p>
+</section>
+
+<section>
+<h3>Data Stored On-Device Only</h3>
+<p>The following data never leaves your device and is stored locally only:</p>
+<ul>
+<li>Gameplay statistics (score, survival time, run history)</li>
+<li>XP progression and quest progress</li>
+<li>Daily quest streak and completion state</li>
+<li>Game settings (sound, haptics, theme)</li>
+<li>Tutorial completion flags</li>
+<li>Ad consent state and timestamps</li>
+</ul>
+</section>
+
+<section>
+<h3>Game Analytics &amp; Improvements (Supabase)</h3>
+<p>
+We collect anonymised gameplay events (e.g. game started, quest completed, ad watched, game over)
+to understand how players use the app and to improve it.
+</p>
+<p>
+<strong>How we identify you:</strong> We do not know your name, email, or real-world identity.
+These events contain only an anonymous session ID — never personal data. Data is not shared with
+third-party data brokers and is not used to track your activity across other apps or websites.
+</p>
+<p>Analytics events are retained for 90 days and then deleted.</p>
+</section>
+
+<section>
+<h3>League System &amp; Competitive Rankings</h3>
+<p>
+ArcBreaker features a weekly league system that ranks players by XP earned during each league week.
+Your league tier (e.g. Competitors, Challengers, Elite) and your weekly XP total are stored on our
+private Supabase servers, linked only to your anonymous Apple Game Center player ID — never to your
+name or real-world identity. Historical season results are retained to show your personal progression
+over time. League entries are anonymised after the season ends (7 days).
+</p>
+</section>
+
+<section>
+<h3>Daily Quests &amp; Streak Tracking</h3>
+<p>
+The app tracks your completion of daily quests and your consecutive daily play streak.
+This data (quest type, completion timestamp, streak count) is stored locally on your device.
+It is used solely to calculate XP multipliers, display your streak badge, and personalise quest
+difficulty. This data is never shared with third parties.
+</p>
+</section>
+
+<section>
+<h3>Advertising (Google AdMob)</h3>
+<p>
+The app uses Google AdMob to display advertisements. In the European Union, user consent is
+obtained via Google's User Messaging Platform (UMP).
+</p>
+<p>Personalised advertising is only enabled if:</p>
+<ul>
+<li>valid consent has been given (UMP / GDPR)</li>
+<li>and App Tracking Transparency (ATT) permission is granted</li>
+</ul>
+<p>
+Otherwise, only non-personalised ads are shown (the <code>npa=1</code> flag is sent with every
+ad request). You can change your ad personalisation preferences at any time via
+Settings → Privacy in the app.
+</p>
+<p>Google's privacy policy: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></p>
+</section>
+
+<section>
+<h3>App Tracking Transparency (ATT)</h3>
+<p>
+The app uses Apple's App Tracking Transparency framework. On iOS 14.5+, a system prompt asks
+permission to track your activity across other companies' apps and websites. You can decline
+without affecting any gameplay feature. Access to the advertising identifier (IDFA) is only
+possible after explicit permission.
+</p>
+</section>
+
+<section>
+<h3>Apple Game Center</h3>
+<p>
+Leaderboards and achievements are provided via Apple Game Center. Your Game Center player ID
+links your league rank across devices — never to your name or email. Apple independently processes
+Game Center data under their own privacy policy:
+<a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">apple.com/legal/privacy</a>
+</p>
+</section>
+
+<section>
+<h3>Data Retention</h3>
+<table>
+<thead><tr><th>Data type</th><th>Location</th><th>Retention</th></tr></thead>
+<tbody>
+<tr><td>Gameplay stats / progression</td><td>Device (local)</td><td>Until app is deleted</td></tr>
+<tr><td>League XP entry</td><td>Supabase</td><td>7 days (season), then anonymised</td></tr>
+<tr><td>Analytics events</td><td>Supabase</td><td>90 days, then deleted</td></tr>
+<tr><td>Ad consent timestamp</td><td>Device (local)</td><td>12 months, then re-consent requested</td></tr>
+</tbody>
+</table>
+</section>
+
+<section>
+<h3>Children's Privacy</h3>
+<p>
+ArcBreaker does not knowingly collect personal data from children under the age of 13
+(or under 16 in the EEA). The app does not contain features that require account creation
+or submission of personal information.
+</p>
+</section>
+
+<section>
+<h3>Your Rights (GDPR)</h3>
+<p>If you are located in the European Economic Area, you have the following rights:</p>
+<ul>
+<li><strong>Right to access</strong> – request a copy of any personal data we hold</li>
+<li><strong>Right to deletion</strong> – request erasure of your league and analytics data</li>
+<li><strong>Right to withdraw consent</strong> – change ad personalisation preferences at any time via Settings → Privacy in the app</li>
+<li><strong>Right to object</strong> – object to data processing for analytics purposes</li>
+</ul>
+<p>To exercise any of these rights, contact us at: <a href="mailto:info@hafenente.de">info@hafenente.de</a></p>
+</section>
+
+<section>
+<h3>International Data Processing</h3>
+<p>
+Depending on the user's location, data may be processed outside their country.
+Appropriate safeguards such as standard contractual clauses are applied.
+</p>
+</section>
+
+<section>
+<h3>Changes to This Policy</h3>
+<p>
+We may update this Privacy Policy from time to time. The updated version will be published within
+the app and on our App Store listing. Continued use of the app after changes constitutes acceptance
+of the revised policy.
+</p>
+</section>
+`,
+
+es: `
+<section>
+<h2>Aviso Legal</h2>
+<p>
+<strong>Nombre:</strong> Swen Grünwald<br>
+<strong>Empresa:</strong> HafenEnte<br>
+<strong>Dirección:</strong><br>
+Grindelallee 110<br>
+20146 Hamburgo<br>
+Alemania<br><br>
+<strong>Teléfono:</strong> +49 176 34313254<br>
+<strong>Correo electrónico:</strong> <a href="mailto:info@hafenente.de">info@hafenente.de</a>
+</p>
+</section>
+
+<section>
+<h2>Política de Privacidad</h2>
+<p>Última actualización: mayo de 2026</p>
+<p>
+Esta política de privacidad se aplica a la aplicación móvil
+<strong>"ArcBreaker: Ringfall Arena"</strong> (iOS).
+ArcBreaker ha sido diseñado con la privacidad como principio fundamental. Todo el progreso de juego,
+XP, misiones y configuración se almacena principalmente en tu dispositivo. No es necesario registrarse
+ni crear una cuenta para jugar.
+</p>
+</section>
+
+<section>
+<h3>Responsable del Tratamiento</h3>
+<p>
+Swen Grünwald (HafenEnte)<br>
+Grindelallee 110, 20146 Hamburgo, Alemania<br>
+<a href="mailto:info@hafenente.de">info@hafenente.de</a>
+</p>
+</section>
+
+<section>
+<h3>Datos almacenados únicamente en el dispositivo</h3>
+<p>Los siguientes datos nunca abandonan tu dispositivo y se almacenan localmente:</p>
+<ul>
+<li>Estadísticas de juego (puntuación, tiempo de supervivencia, historial de partidas)</li>
+<li>Progreso de XP y avance en misiones</li>
+<li>Racha de misiones diarias y estado de finalización</li>
+<li>Ajustes del juego (sonido, vibración, tema)</li>
+<li>Indicadores de finalización del tutorial</li>
+<li>Estado del consentimiento publicitario y marcas de tiempo</li>
+</ul>
+</section>
+
+<section>
+<h3>Análisis del Juego y Mejoras (Supabase)</h3>
+<p>
+Recopilamos eventos de juego anonimizados (por ejemplo, inicio de partida, misión completada,
+anuncio visto, fin de partida) para entender cómo los jugadores utilizan la aplicación y mejorarla.
+</p>
+<p>
+<strong>Cómo te identificamos:</strong> No conocemos tu nombre, correo electrónico ni identidad real.
+Estos eventos contienen únicamente un ID de sesión anónimo — nunca datos personales. Los datos no
+se comparten con intermediarios de datos ni se utilizan para rastrear tu actividad en otras aplicaciones
+o sitios web.
+</p>
+<p>Los eventos de analítica se conservan durante 90 días y luego se eliminan.</p>
+</section>
+
+<section>
+<h3>Sistema de Ligas y Clasificaciones</h3>
+<p>
+ArcBreaker cuenta con un sistema de ligas semanal que clasifica a los jugadores según el XP
+obtenido durante cada semana de liga. Tu nivel de liga (p. ej. Competidores, Retadores, Élite)
+y tu XP semanal se almacenan en nuestros servidores privados de Supabase, vinculados únicamente
+a tu ID de jugador anónimo de Apple Game Center — nunca a tu nombre ni a tu identidad real.
+Los resultados históricos de temporada se conservan para mostrar tu progresión personal.
+Las entradas de liga se anonimizan una vez finalizada la temporada (7 días).
+</p>
+</section>
+
+<section>
+<h3>Misiones Diarias y Seguimiento de Racha</h3>
+<p>
+La aplicación registra la finalización de tus misiones diarias y tu racha de juego consecutiva.
+Estos datos (tipo de misión, marca de tiempo de finalización, recuento de racha) se almacenan
+localmente en tu dispositivo. Se utilizan exclusivamente para calcular multiplicadores de XP,
+mostrar tu insignia de racha y personalizar la dificultad de las misiones.
+Estos datos nunca se comparten con terceros.
+</p>
+</section>
+
+<section>
+<h3>Publicidad (Google AdMob)</h3>
+<p>
+La aplicación utiliza Google AdMob para mostrar anuncios. En la Unión Europea, el consentimiento
+se obtiene mediante la plataforma Google User Messaging Platform (UMP).
+</p>
+<p>La publicidad personalizada solo se muestra si:</p>
+<ul>
+<li>el usuario ha otorgado su consentimiento válido (UMP / RGPD)</li>
+<li>y se ha autorizado App Tracking Transparency (ATT) de Apple</li>
+</ul>
+<p>
+De lo contrario, solo se muestran anuncios no personalizados (se envía el parámetro
+<code>npa=1</code> con cada solicitud). Puedes cambiar tus preferencias de personalización
+publicitaria en cualquier momento en Ajustes → Privacidad de la aplicación.
+</p>
+<p>Política de privacidad de Google: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></p>
+</section>
+
+<section>
+<h3>App Tracking Transparency (ATT)</h3>
+<p>
+La aplicación utiliza el marco App Tracking Transparency de Apple. En iOS 14.5 y versiones
+posteriores, aparece una solicitud del sistema que pide permiso para rastrear tu actividad en
+aplicaciones de otras empresas. Puedes rechazarlo sin que ninguna función del juego se vea
+afectada. El acceso al identificador publicitario (IDFA) solo se concede con consentimiento explícito.
+</p>
+</section>
+
+<section>
+<h3>Apple Game Center</h3>
+<p>
+Las clasificaciones y logros se proporcionan a través de Apple Game Center. Tu ID de jugador de
+Game Center vincula tu rango de liga entre dispositivos — nunca a tu nombre ni correo electrónico.
+Apple procesa los datos de Game Center de forma independiente:
+<a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">apple.com/legal/privacy</a>
+</p>
+</section>
+
+<section>
+<h3>Conservación de datos</h3>
+<table>
+<thead><tr><th>Tipo de datos</th><th>Ubicación</th><th>Conservación</th></tr></thead>
+<tbody>
+<tr><td>Estadísticas / progreso</td><td>Dispositivo (local)</td><td>Hasta desinstalar la app</td></tr>
+<tr><td>Entrada de XP de liga</td><td>Supabase</td><td>7 días (temporada), luego anonimizada</td></tr>
+<tr><td>Eventos de analítica</td><td>Supabase</td><td>90 días, luego eliminados</td></tr>
+<tr><td>Consentimiento publicitario</td><td>Dispositivo (local)</td><td>12 meses, luego nuevo consentimiento</td></tr>
+</tbody>
+</table>
+</section>
+
+<section>
+<h3>Privacidad de menores</h3>
+<p>
+ArcBreaker no recopila deliberadamente datos personales de menores de 13 años
+(ni de menores de 16 años en el EEE). La aplicación no contiene funciones que requieran
+la creación de una cuenta ni el envío de datos personales.
+</p>
+</section>
+
+<section>
+<h3>Tus derechos (RGPD)</h3>
+<p>Si te encuentras en el Espacio Económico Europeo, tienes los siguientes derechos:</p>
+<ul>
+<li><strong>Derecho de acceso</strong> – solicita una copia de los datos que conservamos</li>
+<li><strong>Derecho de supresión</strong> – solicita la eliminación de tus datos de liga y analítica</li>
+<li><strong>Derecho a retirar el consentimiento</strong> – cambia tus preferencias publicitarias en Ajustes → Privacidad</li>
+<li><strong>Derecho de oposición</strong> – oponte al tratamiento de tus datos con fines analíticos</li>
+</ul>
+<p>Para ejercer cualquiera de estos derechos: <a href="mailto:info@hafenente.de">info@hafenente.de</a></p>
+</section>
+
+<section>
+<h3>Tratamiento Internacional de Datos</h3>
+<p>
+Dependiendo de la ubicación del usuario, los datos pueden procesarse fuera de su país.
+Se aplican salvaguardas adecuadas, como cláusulas contractuales estándar.
+</p>
+</section>
+
+<section>
+<h3>Cambios en esta política</h3>
+<p>
+Podemos actualizar esta Política de Privacidad periódicamente. La versión actualizada se publicará
+dentro de la aplicación y en la ficha de App Store. El uso continuado de la aplicación tras
+cualquier cambio implica la aceptación de la política revisada.
+</p>
+</section>
+`,
+
+fr: `
+<section>
+<h2>Mentions légales</h2>
+<p>
+<strong>Nom:</strong> Swen Grünwald<br>
+<strong>Entreprise:</strong> HafenEnte<br>
+<strong>Adresse:</strong><br>
+Grindelallee 110<br>
+20146 Hambourg<br>
+Allemagne<br><br>
+<strong>Téléphone:</strong> +49 176 34313254<br>
+<strong>Email:</strong> <a href="mailto:info@hafenente.de">info@hafenente.de</a>
+</p>
+</section>
+
+<section>
+<h2>Politique de Confidentialité</h2>
+<p>Dernière mise à jour : mai 2026</p>
+<p>
+Cette politique de confidentialité s'applique à l'application mobile
+<strong>« ArcBreaker: Ringfall Arena »</strong> (iOS).
+ArcBreaker a été conçu avec la confidentialité comme principe fondamental. L'ensemble de la
+progression de jeu, des XP, des quêtes et des paramètres est stocké principalement sur votre
+appareil. Aucun compte ni inscription n'est nécessaire pour jouer.
+</p>
+</section>
+
+<section>
+<h3>Responsable du traitement</h3>
+<p>
+Swen Grünwald (HafenEnte)<br>
+Grindelallee 110, 20146 Hambourg, Allemagne<br>
+<a href="mailto:info@hafenente.de">info@hafenente.de</a>
+</p>
+</section>
+
+<section>
+<h3>Données stockées uniquement sur l'appareil</h3>
+<p>Les données suivantes ne quittent jamais votre appareil et sont stockées localement :</p>
+<ul>
+<li>Statistiques de jeu (score, temps de survie, historique des parties)</li>
+<li>Progression XP et avancement des quêtes</li>
+<li>Série de quêtes quotidiennes et état de complétion</li>
+<li>Paramètres du jeu (son, retour haptique, thème)</li>
+<li>Indicateurs de complétion du tutoriel</li>
+<li>État du consentement publicitaire et horodatages</li>
+</ul>
+</section>
+
+<section>
+<h3>Analyses de Jeu et Améliorations (Supabase)</h3>
+<p>
+Nous collectons des événements de jeu anonymisés (ex. : début de partie, quête complétée,
+publicité visionnée, fin de partie) afin de comprendre comment les joueurs utilisent
+l'application et de l'améliorer.
+</p>
+<p>
+<strong>Comment nous vous identifions :</strong> Nous ne connaissons ni votre nom, ni votre
+e-mail, ni votre identité réelle. Ces événements contiennent uniquement un identifiant de
+session anonyme — jamais de données personnelles. Les données ne sont pas partagées avec des
+courtiers en données ni utilisées pour suivre votre activité sur d'autres applications ou sites web.
+</p>
+<p>Les événements analytiques sont conservés 90 jours puis supprimés.</p>
+</section>
+
+<section>
+<h3>Système de Ligues et Classements</h3>
+<p>
+ArcBreaker propose un système de ligues hebdomadaire qui classe les joueurs en fonction de l'XP
+accumulé au cours de chaque semaine. Votre niveau de ligue (p. ex. Compétiteurs, Challengers,
+Élite) et votre total d'XP hebdomadaire sont stockés sur nos serveurs Supabase privés, associés
+uniquement à votre identifiant de joueur anonyme Apple Game Center — jamais à votre nom ni à
+votre identité réelle. Les résultats historiques des saisons sont conservés pour afficher votre
+progression personnelle. Les entrées de ligue sont anonymisées à la fin de la saison (7 jours).
+</p>
+</section>
+
+<section>
+<h3>Quêtes Quotidiennes et Suivi des Séries</h3>
+<p>
+L'application enregistre la complétion de vos quêtes quotidiennes ainsi que votre série de jeu
+consécutive. Ces données (type de quête, horodatage de complétion, nombre de jours consécutifs)
+sont stockées localement sur votre appareil. Elles sont utilisées uniquement pour calculer les
+multiplicateurs d'XP, afficher votre badge de série et personnaliser la difficulté des quêtes.
+Ces données ne sont jamais partagées avec des tiers.
+</p>
+</section>
+
+<section>
+<h3>Publicité (Google AdMob)</h3>
+<p>
+L'application utilise Google AdMob pour afficher des publicités. Dans l'Union européenne,
+le consentement est recueilli via Google User Messaging Platform (UMP).
+</p>
+<p>Les publicités personnalisées ne sont affichées que si :</p>
+<ul>
+<li>un consentement valide a été donné (UMP / RGPD)</li>
+<li>et l'autorisation App Tracking Transparency (ATT) d'Apple est accordée</li>
+</ul>
+<p>
+Sinon, seules des publicités non personnalisées sont affichées (le paramètre
+<code>npa=1</code> est envoyé avec chaque requête). Vous pouvez modifier vos préférences
+à tout moment via Paramètres → Confidentialité dans l'application.
+</p>
+<p>Politique de confidentialité de Google : <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></p>
+</section>
+
+<section>
+<h3>App Tracking Transparency (ATT)</h3>
+<p>
+L'application utilise le framework App Tracking Transparency d'Apple. Sur iOS 14.5+, une invite
+système vous demande l'autorisation de suivre votre activité dans les applications d'autres
+entreprises. Vous pouvez refuser sans qu'aucune fonctionnalité de jeu ne soit affectée.
+L'accès à l'identifiant publicitaire (IDFA) nécessite le consentement explicite.
+</p>
+</section>
+
+<section>
+<h3>Apple Game Center</h3>
+<p>
+Les classements et succès sont fournis via Apple Game Center. Votre identifiant Game Center
+lie votre rang de ligue entre appareils — jamais à votre nom ni à votre e-mail. Apple traite
+ces données de manière indépendante :
+<a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">apple.com/legal/privacy</a>
+</p>
+</section>
+
+<section>
+<h3>Conservation des données</h3>
+<table>
+<thead><tr><th>Type de données</th><th>Emplacement</th><th>Conservation</th></tr></thead>
+<tbody>
+<tr><td>Statistiques / progression</td><td>Appareil (local)</td><td>Jusqu'à désinstallation</td></tr>
+<tr><td>Entrée XP de ligue</td><td>Supabase</td><td>7 jours (saison), puis anonymisée</td></tr>
+<tr><td>Événements analytiques</td><td>Supabase</td><td>90 jours, puis supprimés</td></tr>
+<tr><td>Consentement publicitaire</td><td>Appareil (local)</td><td>12 mois, puis nouveau consentement</td></tr>
+</tbody>
+</table>
+</section>
+
+<section>
+<h3>Confidentialité des enfants</h3>
+<p>
+ArcBreaker ne collecte pas sciemment de données personnelles concernant des enfants de moins
+de 13 ans (ni de moins de 16 ans dans l'EEE). L'application ne contient aucune fonctionnalité
+nécessitant la création d'un compte ou la transmission de données personnelles.
+</p>
+</section>
+
+<section>
+<h3>Vos droits (RGPD)</h3>
+<p>Si vous résidez dans l'Espace économique européen, vous disposez des droits suivants :</p>
+<ul>
+<li><strong>Droit d'accès</strong> – demandez une copie des données que nous détenons</li>
+<li><strong>Droit à l'effacement</strong> – demandez la suppression de vos données de ligue et d'analyse</li>
+<li><strong>Droit de retrait du consentement</strong> – modifiez vos préférences publicitaires via Paramètres → Confidentialité</li>
+<li><strong>Droit d'opposition</strong> – opposez-vous au traitement de vos données à des fins analytiques</li>
+</ul>
+<p>Pour exercer vos droits : <a href="mailto:info@hafenente.de">info@hafenente.de</a></p>
+</section>
+
+<section>
+<h3>Traitement international des données</h3>
+<p>
+Selon la localisation de l'utilisateur, les données peuvent être traitées en dehors de son pays.
+Des garanties appropriées, telles que des clauses contractuelles types, sont appliquées.
+</p>
+</section>
+
+<section>
+<h3>Modifications de cette politique</h3>
+<p>
+Nous pouvons mettre à jour cette Politique de Confidentialité de temps à autre. La version mise
+à jour sera publiée dans l'application et sur la fiche App Store. La poursuite de l'utilisation
+de l'application après toute modification vaut acceptation de la politique révisée.
+</p>
+</section>
+`
+};
+
+function applyNav(lang) {
+  const labels = navLabels[lang] || navLabels.en;
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (labels[key]) el.textContent = labels[key];
+  });
+}
+
+function detectLang() {
+  const lang = navigator.language.slice(0,2);
+  return texts[lang] ? lang : 'en';
+}
+
+function setLang(lang) {
+  document.getElementById("content").innerHTML = texts[lang];
+  document.documentElement.lang = lang;
+  applyNav(lang);
+}
+
+setLang(detectLang());
+</script>
+</body>
+</html>
